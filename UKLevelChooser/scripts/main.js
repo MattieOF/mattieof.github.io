@@ -37,35 +37,27 @@ window.onload = function() { getLevel(); };
 
 function getLevel()
 {
-    if (document.getElementById("includeSecrets").checked == false && document.getElementById("includePrime").checked == false && 
-        document.getElementById("includeBosses").checked == false && document.getElementById("includeNormal").checked == false) 
+    var includeSecretsChecked = document.getElementById("includeSecrets").checked;
+    var includeBossesChecked = document.getElementById("includeBosses").checked;
+    var includePrimeChecked = document.getElementById("includePrime").checked;
+    var includeNormalChecked = document.getElementById("includeNormal").checked;
+
+    if (!includeNormalChecked && !includePrimeChecked && !includeBossesChecked && !includeSecretsChecked) 
     {
         alert("No levels selected!");
         return;
     }
 
-    var index = -1;
-
-    do
-    {
-        index = randomNumber(1, levelCount);
-    } while (validIndex(index) == false);
-
-    document.getElementById("levelTitle").innerText = levelDictionary[index];
-    document.body.style.background = "#202020 url('images/" + index + ".png') no-repeat right top";
-}
-
-function validIndex(index)
-{
-    // TODO: Better solution would be concatenating all selected lists together
-    // when needed, and choosing a random element from that
+    var validLevelIndexes = [];
+    if (includeSecretsChecked) validLevelIndexes = validLevelIndexes.concat(secretLevels);
+    if (includePrimeChecked) validLevelIndexes = validLevelIndexes.concat(primeSanctums);
+    if (includeBossesChecked) validLevelIndexes = validLevelIndexes.concat(bossLevels);
+    if (includeNormalChecked) validLevelIndexes = validLevelIndexes.concat(normalLevels);
     
-    if (index < 1 || index > levelCount) return false;
-    if (document.getElementById("includeNormal").checked == false && normalLevels.includes(index)) return false;
-    if (document.getElementById("includeSecrets").checked == false && secretLevels.includes(index)) return false;
-    if (document.getElementById("includePrime").checked == false && primeSanctums.includes(index)) return false;
-    if (document.getElementById("includeBosses").checked == false && bossLevels.includes(index)) return false;
-    return true;
+    var index = randomNumber(0, validLevelIndexes.length - 1);
+
+    document.getElementById("levelTitle").innerText = levelDictionary[validLevelIndexes[index]];
+    document.body.style.background = "#202020 url('images/" + validLevelIndexes[index] + ".png') no-repeat right top";
 }
 
 function randomNumber(min, max)
