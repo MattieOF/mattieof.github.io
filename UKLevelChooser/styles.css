@@ -41,7 +41,7 @@ h3
 	-webkit-user-select: none; /* Safari */
 	-moz-user-select: none; /* Old versions of Firefox */
 	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Chrome, Opera and Firefox */
+	user-select: none; /* Everything else */
 
     /* 
 	Prevent double-tapping on button from zooming page on mobile
