@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ULTRAKILL Level Chooser</title>
+        <script src="scripts/main.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1>ULTRAKILL Level Chooser</h1>
+        <h3 id="levelTitle">0-1: INTO THE FIRE</h3>
+        <div class="box" >
+            <p>Settings</p>
+            <input type="checkbox" id="includeNormal" name="includeNormal" value="normal" checked=true>Include Normal Levels<br>
+            <input type="checkbox" id="includeSecrets" name="includeSecrets" value="secrets" checked=true>Include Secret Levels<br>
+            <input type="checkbox" id="includePrime" name="includePrime" value="prime" checked=true>Include Prime Sanctums<br>
+            <input type="checkbox" id="includeBosses" name="includeBosses" value="bosses" checked=true>Include Boss Levels<br>
+        </div>
+
+        <button onclick="getLevel()" class="getLevelButton">Get Level</button>
+    </body>
+</html>
