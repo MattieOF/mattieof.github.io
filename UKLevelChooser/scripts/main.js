@@ -56,7 +56,8 @@ function getLevel()
     if (includeBossesChecked) validLevelIndexes = validLevelIndexes.concat(bossLevels);
     if (includeNormalChecked) validLevelIndexes = validLevelIndexes.concat(normalLevels);
     
-    validLevelIndexes = validLevelIndexes.filter(i => i !== prevIndex); // Remove prevIndex from the valid indexes if it exists
+    if (validLevelIndexes.length > 1)
+        validLevelIndexes = validLevelIndexes.filter(i => i !== prevIndex); // Remove prevIndex from the valid indexes if it exists
     
     var index = randomNumber(0, validLevelIndexes.length - 1);
 
