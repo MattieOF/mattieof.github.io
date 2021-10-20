@@ -33,9 +33,25 @@ const bossLevels = [5, 10, 15, 18, 23];
 const normalLevels = [1, 2, 3, 4, 7, 8, 9, 12, 13, 14, 17, 20, 21, 22];
 
 var prevIndex = -1;
+var uiVisible = true;
 
 // Set to random level on load
 window.onload = function() { getLevel(); };
+
+window.addEventListener("keydown", function(event) {
+    if (event.defaultPrevented) return;
+
+    switch (event.code)
+    {
+        case "KeyU":
+            toggleUI();
+            break;
+        case "Enter":
+        case "Space":
+            getLevel();
+            break;
+    }
+}, true);
 
 function getLevel()
 {
@@ -72,4 +88,17 @@ function randomNumber(min, max)
     var val = Math.floor(Math.random() * (max + 1));
     if (val < min) val = min;
     return val;
+}
+
+function toggleUI()
+{
+    var elements = [document.getElementById("settings"), document.getElementById("button"), document.getElementById("header")];
+
+    if (uiVisible) {
+        elements.forEach(element => {element.style.display = "none";});
+    } else {
+        elements.forEach(element => {element.style.display = "";});
+    }
+
+    uiVisible = !uiVisible;
 }
