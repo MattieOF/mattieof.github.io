@@ -32,6 +32,8 @@ const primeSanctums = [19];
 const bossLevels = [5, 10, 15, 18, 23];
 const normalLevels = [1, 2, 3, 4, 7, 8, 9, 12, 13, 14, 17, 20, 21, 22];
 
+var prevIndex = -1;
+
 // Set to random level on load
 window.onload = function() { getLevel(); };
 
@@ -54,10 +56,14 @@ function getLevel()
     if (includeBossesChecked) validLevelIndexes = validLevelIndexes.concat(bossLevels);
     if (includeNormalChecked) validLevelIndexes = validLevelIndexes.concat(normalLevels);
     
+    validLevelIndexes = validLevelIndexes.filter(i => i !== prevIndex); // Remove prevIndex from the valid indexes if it exists
+    
     var index = randomNumber(0, validLevelIndexes.length - 1);
 
     document.getElementById("levelTitle").innerText = levelDictionary[validLevelIndexes[index]];
     document.body.style.background = "#202020 url('images/" + validLevelIndexes[index] + ".png') no-repeat right top";
+
+    prevIndex = validLevelIndexes[index];
 }
 
 function randomNumber(min, max)
