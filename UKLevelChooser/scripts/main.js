@@ -1,5 +1,3 @@
-const levelCount = 23; // Including secret levels and P-1
-
 const levelDictionary =
 {
     1: "0-1: INTO THE FIRE",
