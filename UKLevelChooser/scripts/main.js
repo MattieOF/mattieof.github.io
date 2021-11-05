@@ -24,7 +24,7 @@ const levelDictionary =
     20: "4-1: SLAVES TO POWER",
     21: "4-2: GOD DAMN THE SUN",
     22: "4-3: A SHOT IN THE DARK",
-    23: "4-4: CLAIR DE SOLEIL"
+    23: "4-4: CLAIR DE SOLEIL",
 }
 
 const secretLevels = [6, 11, 16];
@@ -34,6 +34,7 @@ const normalLevels = [1, 2, 3, 4, 7, 8, 9, 12, 13, 14, 17, 20, 21, 22];
 
 var prevIndex = -1;
 var uiVisible = true;
+var currentIndex = 0;
 
 // Set to random level on load
 window.onload = function() { getLevel(); };
@@ -46,6 +47,12 @@ window.addEventListener("keydown", function(event) {
         case "KeyU":
             toggleUI();
             break;
+        case "ArrowRight":
+            next();
+            break;
+        case "ArrowLeft":
+            previous();
+            break;
         case "Enter":
         case "Space":
             getLevel();
@@ -55,32 +62,45 @@ window.addEventListener("keydown", function(event) {
 
 function getLevel()
 {
-    var includeSecretsChecked = document.getElementById("includeSecrets").checked;
-    var includeBossesChecked = document.getElementById("includeBosses").checked;
-    var includePrimeChecked = document.getElementById("includePrime").checked;
-    var includeNormalChecked = document.getElementById("includeNormal").checked;
+    var validLevelIndexes = getValidIndexes();
 
-    if (!includeNormalChecked && !includePrimeChecked && !includeBossesChecked && !includeSecretsChecked) 
+    if (validLevelIndexes.length == 0) 
     {
         alert("No levels selected!");
         return;
     }
+    
+    if (validLevelIndexes.length > 1)
+        validLevelIndexes = validLevelIndexes.filter(i => i !== prevIndex); // Remove prevIndex from the valid indexes if it exists
+    
+    var index = randomNumber(0, validLevelIndexes.length - 1);
+    setLevel(validLevelIndexes[index]);
+}
+
+function getValidIndexes()
+{
+    var includeSecretsChecked = document.getElementById("includeSecrets").checked;
+    var includeBossesChecked = document.getElementById("includeBosses").checked;
+    var includePrimeChecked = document.getElementById("includePrime").checked;
+    var includeNormalChecked = document.getElementById("includeNormal").checked;
 
     var validLevelIndexes = [];
     if (includeSecretsChecked) validLevelIndexes = validLevelIndexes.concat(secretLevels);
     if (includePrimeChecked) validLevelIndexes = validLevelIndexes.concat(primeSanctums);
     if (includeBossesChecked) validLevelIndexes = validLevelIndexes.concat(bossLevels);
     if (includeNormalChecked) validLevelIndexes = validLevelIndexes.concat(normalLevels);
-    
-    if (validLevelIndexes.length > 1)
-        validLevelIndexes = validLevelIndexes.filter(i => i !== prevIndex); // Remove prevIndex from the valid indexes if it exists
-    
-    var index = randomNumber(0, validLevelIndexes.length - 1);
+    return validLevelIndexes;
+}
 
-    document.getElementById("levelTitle").innerText = levelDictionary[validLevelIndexes[index]];
-    document.body.style.background = "#202020 url('images/" + validLevelIndexes[index] + ".png') no-repeat right top";
+function setLevel(index)
+{
+    console.log("Setting level to " + index);
+    document.getElementById("levelTitle").innerText = levelDictionary[index];
+    document.body.style.background = "#202020 url('images/" + index + ".png') no-repeat left top";
+    document.body.style.backgroundSize = "cover";
 
-    prevIndex = validLevelIndexes[index];
+    prevIndex = index;
+    currentIndex = index;
 }
 
 function randomNumber(min, max)
@@ -101,4 +121,26 @@ function toggleUI()
     }
 
     uiVisible = !uiVisible;
+}
+
+function next()
+{
+    var validIndexes = getValidIndexes();
+    validIndexes.sort(function(a, b) {return a - b});
+    var prevIndex = validIndexes.findIndex(element => {return element == currentIndex});
+    if (prevIndex != validIndexes.length - 1)
+    {
+        setLevel(validIndexes[prevIndex + 1]);
+    }
+}
+
+function previous()
+{
+    var validIndexes = getValidIndexes();
+    validIndexes.sort(function(a, b) {return a - b});
+    var prevIndex = validIndexes.findIndex(element => {return element == currentIndex});
+    if (prevIndex != 0)
+    {
+        setLevel(validIndexes[prevIndex - 1]);
+    }
 }
