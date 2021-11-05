@@ -72,3 +72,26 @@ h3
     border-radius: 5%;
     outline-color: blue;
 }
+
+.centerDiv
+{
+    text-align: center;
+}
+
+.normalButton
+{
+	cursor:pointer;
+
+    /* Disable text selection: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Everything else */
+
+    /* 
+	Prevent double-tapping on button from zooming page on mobile
+	https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+	*/
+	touch-action: manipulation; 
+}
