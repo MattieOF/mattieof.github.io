@@ -25,7 +25,7 @@ const levelDictionary =
     21: "4-2: GOD DAMN THE SUN",
     22: "4-3: A SHOT IN THE DARK",
     23: "4-4: CLAIR DE SOLEIL",
-	24: "4-S: CLASH OF THE BRANDICOOT",
+    24: "4-S: CLASH OF THE BRANDICOOT",
 }
 
 const secretLevels = [6, 11, 16, 24];
