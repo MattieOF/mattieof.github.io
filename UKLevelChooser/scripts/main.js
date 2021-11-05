@@ -145,3 +145,21 @@ function previous()
         setLevel(validIndexes[prevIndex - 1]);
     }
 }
+
+function setSelected(value)
+{
+    document.getElementById("includeSecrets").checked = value;
+    document.getElementById("includePrime").checked = value;
+    document.getElementById("includeNormal").checked = value;
+    document.getElementById("includeBosses").checked = value;
+}
+
+function selectAll()
+{
+    setSelected(true);
+}
+
+function selectNone()
+{
+    setSelected(false);
+}

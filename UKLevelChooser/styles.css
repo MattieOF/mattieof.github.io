@@ -54,7 +54,7 @@ h3
 {
     position: absolute;
     left: 50%;
-    bottom: -3%;
+    bottom: -5%;
     transform: translate(-50%, -50%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
@@ -63,7 +63,7 @@ h3
     width:max-content;
     background-color:transparent;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
     padding-left: 10px;
     color:white;
     border-width: 5px 5px 5px 5px;
