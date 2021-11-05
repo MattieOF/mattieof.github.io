@@ -25,9 +25,10 @@ const levelDictionary =
     21: "4-2: GOD DAMN THE SUN",
     22: "4-3: A SHOT IN THE DARK",
     23: "4-4: CLAIR DE SOLEIL",
+	24: "4-S: CLASH OF THE BRANDICOOT",
 }
 
-const secretLevels = [6, 11, 16];
+const secretLevels = [6, 11, 16, 24];
 const primeSanctums = [19];
 const bossLevels = [5, 10, 15, 18, 23];
 const normalLevels = [1, 2, 3, 4, 7, 8, 9, 12, 13, 14, 17, 20, 21, 22];
