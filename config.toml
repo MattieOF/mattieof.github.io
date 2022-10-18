@@ -1,0 +1,4 @@
+baseURL = 'https://mattware.dev/'
+languageCode = 'en-us'
+title = 'Matt Ware'
+theme = "hello-friend"
