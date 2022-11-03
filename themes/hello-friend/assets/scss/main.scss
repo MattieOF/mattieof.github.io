@@ -17,3 +17,14 @@
 @import "sharing-buttons";
 @import "tables";
 @import "404";
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInDelayed {
+    0% { opacity: 0; }
+    66% { opacity: 0; }
+    100% { opacity: 1; }
+}

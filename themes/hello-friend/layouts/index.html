@@ -9,15 +9,35 @@
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
             {{ end }}
 
-            <h1>{{ .Site.Title }}</h1>
+            <div style="animation: fadeIn 2s;">
+                <h1 style="margin-bottom: 0px;">{{ .Site.Title }}</h1>
+                {{- with .Site.Params.social }}
+                        <div>
+                            {{ partial "social-icons.html" . }}
+                
+                            &nbsp; <a href="mailto:mattbware3@gmail.com" target="_blank" rel="noopener" title="Email" class="tooltip">{{ partial "svg.html" (dict "name" "email") }}
+                                <span class="tooltiptext">mattbware3@gmail.com</span>
+                            </a> &nbsp;
+                        </div>
+                {{- end }}
+                <p style="padding-bottom: 20px;"></p>
+            </div>
 
-            {{ partial "subtitle.html" . }}
-
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
-                </div>
-            {{- end }}
+            <div style="animation: fadeInDelayed 1s;">
+                <p><b>I make things, like: </b></p>
+                <p style="color:yellow">⚠️  (WIP, check back later!)  ⚠️</p>
+                {{/*  <p><a href="/">Hate to See</a></p>
+                <p><a href="/">Subhuman</a></p>
+                <p><a href="/">Scrap Resurrection</a></p>
+                <p style="padding-bottom: 30px;"></p>
+                <p>And some other software:</p>
+                <p style="padding-bottom: 30px;"></p>
+                <p>I know multiple game engines:</p>
+                <p style="padding-bottom: 30px;"></p>
+                <p>And programming languages:</p>
+                <p style="padding-bottom: 30px;"></p>
+                <p>I also know some web development (like this site!)</p>  */}}
+            </div>
         </div>
     </main>
 {{ end }}

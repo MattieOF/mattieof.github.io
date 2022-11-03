@@ -25,7 +25,16 @@ theme = "hello-friend"
 
   [[params.social]]
     name = "github"
-    url  = "https://github.com/"
+    url  = "https://github.com/MattieOF"
+  [[params.social]]
+    name = "gitlab"
+    url  = "https://gitlab.com/MattieOF"
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/MattWareDev"
+  [[params.social]]
+    name = "youtube"
+    url  = "https://www.youtube.com/channel/UCI9HdsnOQusLjRijTV9ATKA"
 
 [taxonomies]
     #category = "blog"
