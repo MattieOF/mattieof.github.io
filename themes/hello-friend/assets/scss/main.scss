@@ -18,6 +18,38 @@
 @import "tables";
 @import "404";
 
+.flex { display : flex }
+.flex-wrap { flex-wrap: wrap }
+
+.scrollToTop-show {
+    opacity: 1;
+    margin-bottom: 0px;
+}
+
+.scrollToTop-hide {
+    opacity: 0;
+    margin-bottom: -60px;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+
+    transition-property: all;
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+
+.wip-banner {
+    background: orange;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .no-underline {
     -webkit-text-decoration-line: none;
     text-decoration-line: none;

@@ -3,8 +3,12 @@
 {{ end }}
 
 {{ define "main" }}
-    <main aria-role="main">
-        <div>
+    <main aria-role="main" style="width: 100%">
+        <div>            
+            <div class="wip-banner"><span style="color: white;">⚠️  (Work in progress, check back later!)  ⚠️</span></div>
+
+            <button onclick="scrollToTop()" id="scrollToTop" title="Go to top" class="scrollToTop-hide">🔼</button>
+
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
             {{ end }}
@@ -20,14 +24,20 @@
                             </a>&nbsp;
                         </div>
                 {{- end }}
-                <p style="padding-bottom: 350px;"></p>
-                <a href="#things" class="no-underline"><p style="font-size: 40px;" class="animate-bounce">👇</p></a>
+                <p style="padding-bottom: 300px;"></p>
+                <div style="animation: fadeInDelayed 1.5s;"><a href="#things" class="no-underline"><p style="font-size: 40px;" class="animate-bounce">👇</p></a></div>
                 <p style="padding-bottom: 200px;"></p>
             </div>
 
-            <div style="animation: fadeInDelayed 1s;">
+            <div style="animation: fadeInDelayed 2s;">
                 <p style="font-size: 25px;" id="things"><b>I make <span class="rainbow-text">things</span>, like: </b></p>
-                <p style="color:orange">⚠️  (WIP, check back later!)  ⚠️</p>
+            </div>
+
+            <div style="animation: fadeInDelayed 2s; justify-content: center; gap: 10px;" class="flex flex-wrap">
+                <button onclick="window.location.href = '#games'">🎮 Games</button>
+                <button onclick="window.location.href = '#tools'">⚙ Game Engines/Tooling</button>
+                <button onclick="window.location.href = '#web'">🌐 Web Apps</button>
+                <button onclick="window.location.href = '#software'">💻 Other Software</button>
             </div>
         </div>
     </main>

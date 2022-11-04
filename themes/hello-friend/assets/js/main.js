@@ -10,6 +10,24 @@ const chosenTheme = window.localStorage && window.localStorage.getItem("theme");
 const chosenThemeIsDark = chosenTheme == "dark";
 const chosenThemeIsLight = chosenTheme == "light";
 
+// Scroll to top button from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+let scrollToTopButton = document.getElementById("scrollToTop");
+window.onscroll = function() { onScroll() };
+
+function onScroll() {
+  if (!scrollToTopButton) return;
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollToTopButton.className = "scrollToTop-show";
+  } else {
+    scrollToTopButton.className = "scrollToTop-hide";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 // Detect the color scheme the operating system prefers.
 function detectOSColorTheme() {
   if (chosenThemeIsDark) {
@@ -49,3 +67,5 @@ if (themeToggle) {
 } else {
   localStorage.removeItem("theme");
 }
+
+
