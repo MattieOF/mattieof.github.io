@@ -10,11 +10,10 @@
             {{ end }}
 
             <div style="animation: fadeIn 2s;">
-                <h1 style="margin-bottom: 0px;">{{ .Site.Title }}</h1>
+                <h1 style="margin-bottom: 0px; margin-left: 7px;">{{ .Site.Title }}</h1>
                 {{- with .Site.Params.social }}
                         <div>
                             {{ partial "social-icons.html" . }}
-                
                             &nbsp;<a href="mailto:mattbware3@gmail.com" target="_blank" rel="noopener" title="Email" class="tooltip">{{ partial "svg.html" (dict "name" "email") }}
                                 <span class="tooltiptext">mattbware3@gmail.com</span>
                             </a>&nbsp;
