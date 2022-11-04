@@ -45,6 +45,25 @@
     transition-delay: 0s;
 }
 
+.social-button {
+    display: inline-block;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0s; 
+}
+
+.social-button:hover {
+    scale: 1.4;
+
+    [data-theme=dark] & {
+        color: $dark-hovered;
+    }
+    
+    [data-theme=light] & {
+        color: $light-hovered;
+    }
+}
+
 #scrollToTop:hover {
     color: #ff5722;
 }
