@@ -37,10 +37,16 @@
     right: 30px;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
+    padding: 10px;
+    border-radius: 24px;
 
     transition-property: all;
     transition-duration: 1s;
     transition-delay: 0s;
+}
+
+#scrollToTop:hover {
+    color: #ff5722;
 }
 
 .wip-banner {
