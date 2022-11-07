@@ -4,7 +4,7 @@
         {{ range .Site.Menus.main -}}
             <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
         {{- end }}
-        <span class="theme-toggle not-selectable">&nbsp&nbsp&nbsp{{ partial "theme-toggle-icon.html" . }}</span>
+        
 
         {{- if .Site.Params.EnableGlobalLanguageMenu }}
         <div class="submenu">
@@ -22,3 +22,5 @@
         {{- end }}
     </ul>
 </nav>
+<span class="theme-toggle not-selectable">{{ partial "theme-toggle-icon.html" . }}</span>
+&nbsp;&nbsp;

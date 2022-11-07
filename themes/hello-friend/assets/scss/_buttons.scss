@@ -24,6 +24,10 @@ a.button {
   // Default
   background: $light-background-header;
 
+  transition-property: all;
+  transition-duration: 0.4s;
+  transition-delay: 0s; 
+
   @media (prefers-color-scheme: dark) {
     background: $dark-background-header;
     color: inherit;

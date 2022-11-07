@@ -36,14 +36,88 @@
             <div style="animation: fadeInDelayed 2s; justify-content: center; gap: 10px;" class="flex flex-wrap">
                 <button onclick="window.location.href = '#games'">🎮 Games</button>
                 <button onclick="window.location.href = '#tools'">⚙ Game Engines/Tooling</button>
-                <button onclick="window.location.href = '#web'">🌐 Web Apps</button>
+                <button onclick="window.location.href = '#web'">🌐 Web Stuff</button>
                 <button onclick="window.location.href = '#software'">💻 Other Software</button>
             </div>
 
             <div id="games" class="homepage-header" style="margin-top:125px;">GAMES</div>
+
+            <div id="subhuman" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">SUBHUMAN</h2>
+                    <p class="portfolio-desc">A top-down submarine survival horror.</p>
+                    <a href="" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
+                    &nbsp;&nbsp;
+                    <a href="https://github.com/MattieOF/Subhuman" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
+                </div>
+            </div>
+
+            <div id="scrap-resurrection" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">SCRAP RESURRECTION</h2>
+                    <p class="portfolio-desc">A character-switching 2D platformer/shooter.</p>
+                    <a href="" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
+                    &nbsp;&nbsp;
+                    <a href="https://github.com/MattieOF/ScrapResurrection" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
+                </div>
+            </div>
+
+            <div id="hate-to-see" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">HATE TO SEE</h2>
+                    <p class="portfolio-desc">A 2D platformer in which you must hate to see.</p>
+                    <a href="https://mattieof.itch.io/hatetosee" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
+                    &nbsp;&nbsp;
+                    <a href="https://github.com/mattiemonster/Hate-To-See" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
+                </div>
+            </div>
+
+            <div id="subhuman" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <p style="font-weight: bold;">And some others, including:</p>
+                    <p><a href="https://mattieof.itch.io/popper" style="color:darkcyan">Popper</a></p>
+                    <p><a href="https://github.com/MattieOF/Wolfenstein3DRemake" style="color:darkcyan">Wolfenstein 3D Remake</a></p>
+                    <p><a href="https://mattieof.itch.io/exterminator" style="color:darkcyan">Exterminator</a></p>
+                </div>
+            </div>
+
+            <div class="end-of-section"></div>
+
             <div id="tools" class="homepage-header color-b" style="margin-top:125px;">GAME ENGINES/TOOLING</div>
-            <div id="web" class="homepage-header color-c" style="margin-top:125px;">WEB APPS</div>
+            <div id="dough" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">DOUGH</h2>
+                    <p class="portfolio-desc">In-development 2D game engine written in C++.</p>
+                    <a href="https://github.com/MattieOF/Dough" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
+                </div>
+            </div>
+            <div class="end-of-section"></div>
+
+            <div id="web" class="homepage-header color-c" style="margin-top:125px;">WEB STUFF</div>
+            <div id="portfolio" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">MATTWARE.DEV</h2>
+                    <p class="portfolio-desc">Portfolio website created with the Hugo static site generator and a heavily edited version of the Hello World theme.</p>
+                    <p>Hosted for free using GitHub pages (❤️ GitHub!)</p>
+                    <a href="https://github.com/MattieOF/mattieof.github.io" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
+                </div>
+            </div>
+            <div id="uklc" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">ULTRAKILL LEVEL CHOOSER</h2>
+                    <p class="portfolio-desc">Small web app to get a random level from the game ULTRAKILL.</p>
+                    <button onclick="window.location.href = '../../UKLevelChooser/index.html'">View the project</button>
+                </div>
+            </div>
+            <div class="end-of-section"></div>
+
             <div id="software" class="homepage-header color-d" style="margin-top:125px;">OTHER SOFTWARE</div>
+            <div id="subhuman" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <p style="font-weight: bold;">For anything I may of forgotten, see my <a href="https://github.com/MattieOF" style="color:darkcyan">GitHub.</a></p>
+                </div>
+            </div>
+            <div class="end-of-section"></div>
         </div>
     </main>
 {{ end }}
