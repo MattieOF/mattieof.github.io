@@ -34,11 +34,7 @@ function detectOSColorTheme() {
     document.documentElement.setAttribute("data-theme", "dark");
   } else if (chosenThemeIsLight) {
     document.documentElement.setAttribute("data-theme", "light");
-  } else { //if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } //else {
-  //  document.documentElement.setAttribute("data-theme", "light");
-  //}
+  }
 }
 
 // Switch the theme.
@@ -56,16 +52,7 @@ function switchTheme(e) {
 // Event listener
 if (themeToggle) {
   themeToggle.addEventListener("click", switchTheme, false);
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => e.matches && detectOSColorTheme());
-  window
-    .matchMedia("(prefers-color-scheme: light)")
-    .addEventListener("change", (e) => e.matches && detectOSColorTheme());
-
   detectOSColorTheme();
-} else {
-  localStorage.removeItem("theme");
 }
 
 
