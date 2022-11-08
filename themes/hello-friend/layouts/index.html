@@ -4,7 +4,7 @@
 
 {{ define "main" }}
     <main aria-role="main" style="width: 100%">
-        <div>            
+        <div>
             <div class="wip-banner"><span style="color: white;">{{ partial "warning-svg.html" }}&nbsp;&nbsp;(Work in progress, check back later!)&nbsp;&nbsp;{{ partial "warning-svg.html" }}</span></div>
 
             <button onclick="scrollToTop()" id="scrollToTop" title="Go to top" class="scrollToTop-hide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 20px; height: 20px;"><path fill="currentColor" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path></svg></button>
@@ -44,6 +44,25 @@
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
                     <h2 class="portfolio-header">SUBHUMAN</h2>
                     <p class="portfolio-desc">A top-down submarine survival horror.</p>
+                    <table style="border-spacing:20px; color:#a9a9b3;">
+                        <tr>
+                            <td><b>Engine</b></td>
+                            <td>GameMaker</td>
+                        </tr>
+                        <tr>
+                            <td><b>Genre</b></td>
+                            <td>Survival Horror</td>
+                        </tr>
+                        <tr>
+                            <td><b>Date</b></td>
+                            <td>January/February 2022</td>
+                        </tr>
+                        <tr>
+                            <td><b>Role</b></td>
+                            <td>Sole developer</td>
+                        </tr>
+                    </table>
+                    <br>
                     <a href="" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
                     &nbsp;&nbsp;
                     <a href="https://github.com/MattieOF/Subhuman" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
@@ -54,6 +73,25 @@
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
                     <h2 class="portfolio-header">SCRAP RESURRECTION</h2>
                     <p class="portfolio-desc">A character-switching 2D platformer/shooter.</p>
+                    <table style="border-spacing:20px; color:#a9a9b3;">
+                        <tr>
+                            <td><b>Engine</b></td>
+                            <td>GameMaker</td>
+                        </tr>
+                        <tr>
+                            <td><b>Genre</b></td>
+                            <td>Action-Platformer</td>
+                        </tr>
+                        <tr>
+                            <td><b>Date</b></td>
+                            <td>May/June 2022</td>
+                        </tr>
+                        <tr>
+                            <td><b>Role</b></td>
+                            <td>Sole programmer, sound design, some sprites</td>
+                        </tr>
+                    </table>
+                    <br>
                     <a href="" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
                     &nbsp;&nbsp;
                     <a href="https://github.com/MattieOF/ScrapResurrection" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
@@ -64,6 +102,25 @@
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
                     <h2 class="portfolio-header">HATE TO SEE</h2>
                     <p class="portfolio-desc">A 2D platformer in which you must hate to see.</p>
+                    <table style="border-spacing:20px; color:#a9a9b3;">
+                        <tr>
+                            <td><b>Engine</b></td>
+                            <td>Unity</td>
+                        </tr>
+                        <tr>
+                            <td><b>Genre</b></td>
+                            <td>Platformer</td>
+                        </tr>
+                        <tr>
+                            <td><b>Date</b></td>
+                            <td>February 16th 2019 - February 23rd 2019</td>
+                        </tr>
+                        <tr>
+                            <td><b>Role</b></td>
+                            <td>Sole developer</td>
+                        </tr>
+                    </table>
+                    <br>
                     <a href="https://mattieof.itch.io/hatetosee" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
                     &nbsp;&nbsp;
                     <a href="https://github.com/mattiemonster/Hate-To-See" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
@@ -86,6 +143,33 @@
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
                     <h2 class="portfolio-header">DOUGH</h2>
                     <p class="portfolio-desc">In-development 2D game engine written in C++.</p>
+                    <table style="border-spacing:20px; color:#a9a9b3;">
+                        <tr>
+                            <td><b>Language</b></td>
+                            <td>C++</td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td><b>Libraries</b></td>
+                            <td>
+                                Premake<br/>
+                                spdlog<br/>
+                                PPK_ASSERT<br/>
+                                GLFW<br/>
+                                GLAD<br/>
+                                Dear ImGui<br/>
+                                glm<br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Date</b></td>
+                            <td>21st October 2022 - Present</td>
+                        </tr>
+                        <tr>
+                            <td><b>Role</b></td>
+                            <td>Sole developer</td>
+                        </tr>
+                    </table>
+                    <br>
                     <a href="https://github.com/MattieOF/Dough" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
                 </div>
             </div>
@@ -96,6 +180,30 @@
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
                     <h2 class="portfolio-header">MATTWARE.DEV</h2>
                     <p class="portfolio-desc">Portfolio website created with the Hugo static site generator and a heavily edited version of the Hello World theme.</p>
+                    <table style="border-spacing:20px; color:#a9a9b3;">
+                        <tr>
+                            <td><b>Language</b></td>
+                            <td>HTML/SCSS/JavaScript</td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td><b>Tools and Libraries</b></td>
+                            <td>
+                                Hugo<br/>
+                                Hello World theme<br/>
+                                GitHub Pages<br/>
+                                Google Domains<br/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Date</b></td>
+                            <td>November 2022</td>
+                        </tr>
+                        <tr>
+                            <td><b>Role</b></td>
+                            <td>Sole developer</td>
+                        </tr>
+                    </table>
+                    <br>
                     <p>Hosted for free using GitHub pages (❤️ GitHub!)</p>
                     <a href="https://github.com/MattieOF/mattieof.github.io" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
                 </div>
