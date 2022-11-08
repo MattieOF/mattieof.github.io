@@ -35,6 +35,7 @@ function detectOSColorTheme() {
   } else if (chosenThemeIsLight) {
     document.documentElement.setAttribute("data-theme", "light");
   }
+  document.documentElement.setAttribute("data-theme", "dark");
 }
 
 // Switch the theme.
