@@ -88,6 +88,17 @@
     padding-bottom: 15px;
 }
 
+.mobile-warning-banner {
+    display: none;
+    background: orange;
+    width: 100%;
+    padding: 15px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){ .mobile-warning-banner { display: inline;}}
+
 .no-underline {
     -webkit-text-decoration-line: none;
     text-decoration-line: none;
