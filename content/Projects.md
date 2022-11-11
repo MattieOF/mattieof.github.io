@@ -1,19 +1,8 @@
 ---
 title: "Projects"
-date: 2022-10-18T17:52:36+01:00
-draft: falses
+date: 2022-11-11T17:33:36Z
+type: "projects"
+layout: "projects"
+draft: false
 ---
 
-## [ULTRAKILL Level Chooser]({{< ref "UltrakillLevelChooser.md" >}})
-Small web app made in pure HTML/CSS/JS to choose a random level from the game ULTRAKILL.
-
-![Test](/Images/UKLevelChooserScreenshot.png)
-
-Features:
-- Has basic UI 
-- Can hide UI
-- Keybinds
-- Easily updatable code structure
-
-Possible improvements:
-- Fix responsiveness on mobile devices and widescreen monitors
