@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "D:/mattieof.github.io",
+	"sourceRoot": "E:/Dev/mattieof.github.io",
 	"sources": [
 		"themes/hello-friend/assets/scss/main.scss",
 		"themes/hello-friend/assets/scss/_normalize.scss",
