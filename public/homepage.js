@@ -1,8 +1,9 @@
 $(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
+  var owl = $(".owl-carousel");
+  owl.owlCarousel({
     loop:true,
     margin:10,
-    nav:true,
+    nav:false,
     dots:true,
     lazyLoad:true,
     center:true,
@@ -16,4 +17,13 @@ $(document).ready(function(){
     }
   }
   );
+
+  owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.deltaY>0) {
+        owl.trigger('next.owl');
+    } else {
+        owl.trigger('prev.owl');
+    }
+    e.preventDefault();
+  });
 });

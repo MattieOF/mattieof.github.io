@@ -26,7 +26,4 @@ $(document).ready(function(){
     }
     e.preventDefault();
   });
-
-  var elements = document.querySelectorAll( 'img' );
-	Intense( elements );
 });
