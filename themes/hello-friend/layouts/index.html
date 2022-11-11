@@ -5,6 +5,11 @@
 {{ define "main" }}
     <main aria-role="main" style="width: 100%">
         <script src="/homepage.js" defer></script>
+        <link rel="stylesheet" href="/OwlCarousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="/OwlCarousel/assets/owl.theme.default.min.css">
+        <script src="/jquery.min.js"></script>
+        <script src="/OwlCarousel/owl.carousel.min.js"></script>
+        <style>.embedtool {position: relative;height: 0;padding-top: 56%;overflow: hidden;max-width: 100%;} .embedtool iframe, .embedtool object, .embedtool embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .embedtool .fluid-vids {position: initial !important}</style>
 
         <div>
             {{/*  <div class="wip-banner"><span style="color: white;">{{ partial "warning-svg.html" }}&nbsp;&nbsp;(Work in progress, check back later!)&nbsp;&nbsp;{{ partial "warning-svg.html" }}</span></div>  */}}
@@ -43,43 +48,66 @@
 
             <div id="games" class="homepage-header" style="margin-top:125px;">GAMES</div>
 
+            <div id="scrap-resurrection" class="game">
+                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
+                    <h2 class="portfolio-header">SCRAP RESURRECTION</h2>
+                    <p class="portfolio-desc">A character-switching 2D platformer/shooter.</p>
+
+                    <div class="embedtool"><iframe src="https://www.youtube.com/embed/WtQwGHIjugo" frameborder="0" allowfullscreen></iframe></div>
+                    
+                    <div class="owl-carousel owl-theme">
+                        <img src="/Images/Subhuman/0_PressEnterScreen.png">
+                        <img src="/Images/Subhuman/3_OpeningRoom.png">
+                        <img src="/Images/Subhuman/6_Inventory.png">
+                        <img src="/Images/Subhuman/10_ReadingNote.png">
+                        <img src="/Images/Subhuman/12_TickInVent.png">
+                        <img src="/Images/Subhuman/18_Lab.png">
+                        <img src="/Images/Subhuman/20_Bossfight.png">
+                        <img src="/Images/Subhuman/22_EndScreen.png">
+                    </div>
+
+                    <table style="border-spacing:20px; color:#a9a9b3;">
+                        <tr>
+                            <td><b>Engine</b></td>
+                            <td>GameMaker</td>
+                        </tr>
+                        <tr>
+                            <td><b>Genre</b></td>
+                            <td>Action-Platformer</td>
+                        </tr>
+                        <tr>
+                            <td><b>Date</b></td>
+                            <td>May/June 2022</td>
+                        </tr>
+                        <tr>
+                            <td><b>Role</b></td>
+                            <td>Sole programmer, sound design, some sprites</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <a href="" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
+                    &nbsp;&nbsp;
+                    <a href="https://github.com/MattieOF/ScrapResurrection" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
+                </div>
+            </div>
+
+
             <div id="subhuman" class="game">
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
                     <h2 class="portfolio-header">SUBHUMAN</h2>
                     <p class="portfolio-desc">A top-down submarine survival horror.</p>
-                    <!-- Slideshow container -->
-                    <div class="slideshow-container">
 
-                        <!-- Full-width images with number and caption text -->
-                        <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="/Images/Subhuman/Test.png" style="width:100%">
-                        <div class="text">Caption Text</div>
-                        </div>
+                    <div class="embedtool"><iframe src="https://www.youtube.com/embed/jRYUqw9PAiw" frameborder="0" allowfullscreen></iframe></div>
                     
-                        <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GwmBI3JPMv8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%"></iframe>
-                        <div class="text">Caption Two</div>
-                        </div>
-                    
-                        <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="/Images/Subhuman/Test3.png" style="width:100%">
-                        <div class="text">Caption Three</div>
-                        </div>
-                    
-                        <!-- Next and previous buttons -->
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <br>
-                    
-                    <!-- The dots/circles -->
-                    <div style="text-align:center">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
+                    <div class="owl-carousel owl-theme">
+                        <img src="/Images/Subhuman/0_PressEnterScreen.png">
+                        <img src="/Images/Subhuman/3_OpeningRoom.png">
+                        <img src="/Images/Subhuman/6_Inventory.png">
+                        <img src="/Images/Subhuman/10_ReadingNote.png">
+                        <img src="/Images/Subhuman/12_TickInVent.png">
+                        <img src="/Images/Subhuman/18_Lab.png">
+                        <img src="/Images/Subhuman/20_Bossfight.png">
+                        <img src="/Images/Subhuman/22_EndScreen.png">
                     </div>
 
                     <table style="border-spacing:20px; color:#a9a9b3;">
@@ -107,34 +135,6 @@
                 </div>
             </div>
 
-            <div id="scrap-resurrection" class="game">
-                <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
-                    <h2 class="portfolio-header">SCRAP RESURRECTION</h2>
-                    <p class="portfolio-desc">A character-switching 2D platformer/shooter.</p>
-                    <table style="border-spacing:20px; color:#a9a9b3;">
-                        <tr>
-                            <td><b>Engine</b></td>
-                            <td>GameMaker</td>
-                        </tr>
-                        <tr>
-                            <td><b>Genre</b></td>
-                            <td>Action-Platformer</td>
-                        </tr>
-                        <tr>
-                            <td><b>Date</b></td>
-                            <td>May/June 2022</td>
-                        </tr>
-                        <tr>
-                            <td><b>Role</b></td>
-                            <td>Sole programmer, sound design, some sprites</td>
-                        </tr>
-                    </table>
-                    <br>
-                    <a href="" target="_blank" rel="noopener" title="View and play the game on itch.io" class="social-button always-white">{{ partial "svg.html" (dict "name" "itchio") }} </a>
-                    &nbsp;&nbsp;
-                    <a href="https://github.com/MattieOF/ScrapResurrection" target="_blank" rel="noopener" title="View the source code on GitHub" class="social-button always-white">{{ partial "svg.html" (dict "name" "github") }} </a>
-                </div>
-            </div>
 
             <div id="hate-to-see" class="game">
                 <div style="padding-left:25vw; padding-right: 25vw; text-align:left;">
@@ -219,9 +219,9 @@
                     <h2 class="portfolio-header">MATTWARE.DEV</h2>
                     <p class="portfolio-desc">Portfolio website created with the Hugo static site generator and a heavily edited version of the Hello World theme.</p>
                     <table style="border-spacing:20px; color:#a9a9b3;">
-                        <tr>
+                        <tr style="vertical-align: top;">
                             <td><b>Language</b></td>
-                            <td>HTML/SCSS/JavaScript</td>
+                            <td>HTML, SCSS, JavaScript</td>
                         </tr>
                         <tr style="vertical-align: top;">
                             <td><b>Tools and Libraries</b></td>
