@@ -31,6 +31,31 @@
     width: 80%;
 }
 
+.cv-personal-header-outer {
+    width: 100%;
+    padding: 10px;
+    background-color: $light-background-secondary;
+    color: $dark-color;
+    padding: 20px;
+}
+
+.cv-personal-header-inner {
+    margin: auto;
+    width: 90%;
+
+    td {
+        /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+        @media screen and (min-width: 601px) {
+            font-size: 18px;
+        }
+        
+        /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+        @media screen and (max-width: 600px) {
+            font-size: 8px;
+        }
+    }
+}
+
 .flex { display : flex }
 .flex-wrap { flex-wrap: wrap }
 
@@ -68,6 +93,10 @@
     transition-property: all;
     transition-duration: 0.4s;
     transition-delay: 0s; 
+}
+
+tr.space-under>td {
+    padding-bottom: 25px;
 }
 
 .social-button:hover {
