@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+
+    {{ block "body" . }}
+        <body style="height: 100%;">
+    {{ end }}
+    
+        <div>
+            <div class="cv-header-outer">
+                <div class="cv-header-inner">
+                    <h1 style="margin: 0; text-align: left;">Matt Ware</h1>
+                    <h4 style="margin-top: 0; margin-bottom: 5px;">Game Programmer</h3>
+                </div>
+            </div>
+            
+            <table style="width: 100%; min-height: 100vh; height: 100%; margin: 0; border-spacing: 0; border-collapse: collapse;">
+                <tr style="vertical-align: top">
+                    <td style="width: 60%; padding-left: 11%;">
+                        <p>Hello, stuff will go here!</p>
+                    </td>
+                    <td class="sidebar">
+                        <h3><b>Personal Information</b></h3>
+                        <hr>
+                        <p><b>Phone</b></p>
+                        <p>+4407703693123</p>
+                        <p><b>Email</b></p>
+                        <p>mattbware3@gmail.com</p>
+                        <p><b>Location</b></p>
+                        <p>Gosport, England</p>
+                        <p><b>www</b></p>
+                        <p>https://www.mattware.dev/</p>
+                        
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        {{ partial "javascript.html" . }}
+    </body>
+</html>

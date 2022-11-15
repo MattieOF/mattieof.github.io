@@ -18,6 +18,19 @@
 @import "tables";
 @import "404";
 
+.cv-header-outer {
+    width: 100%;
+    padding: 10px;
+    background-color: $dark-background;
+    color: $dark-color;
+    padding: 20px;
+}
+
+.cv-header-inner {
+    margin: auto;
+    width: 80%;
+}
+
 .flex { display : flex }
 .flex-wrap { flex-wrap: wrap }
 
@@ -43,6 +56,11 @@
     transition-property: all;
     transition-duration: 1s;
     transition-delay: 0s;
+}
+
+.sidebar {
+    padding: 15px;
+    background-color: $light-background-secondary;
 }
 
 .social-button {
