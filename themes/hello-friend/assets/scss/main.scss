@@ -18,8 +18,10 @@
 @import "tables";
 @import "404";
 
+
 .cv-header-outer {
     width: 100%;
+    height: 134px;
     padding: 10px;
     background-color: $dark-background;
     color: $dark-color;
@@ -29,6 +31,7 @@
 .cv-header-inner {
     margin: auto;
     width: 80%;
+    height: inherit;
 }
 
 .cv-personal-header-outer {
@@ -37,6 +40,38 @@
     background-color: $light-background-secondary;
     color: $dark-color;
     padding: 20px;
+}
+
+.cv-header-div {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.cv-content-div-outer {
+    background-color: $light-background-secondary;
+}
+
+.cv-content-div-inner {
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.progress-bar-frame {
+    width: 200px;
+    height: 22px;
+    background-color: $light-background-header;
+    margin-right: 20px;
+}
+
+.progress-bar-fill {
+    margin: 0;
+    height: 100%;
+    background-color: black;
 }
 
 .cv-personal-header-inner {
