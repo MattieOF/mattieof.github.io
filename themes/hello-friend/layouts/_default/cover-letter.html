@@ -31,21 +31,21 @@
         </div>
 
         <div style="width: 80%; margin: auto;">
-            <p style="margin-bottom: 3px; margin-top: 25px; color: grey; font-style: italic;">To: </p>
+            <p style="margin-bottom: 3px; margin-top: 25px; color: grey; font-style: normal;">To: </p>
             <p style="margin: 0;">{{ .Params.AddressLine1 }}</p>
             <p style="margin: 0;">{{ .Params.AddressLine2 }}</p>
             <p style="margin: 0;">{{ .Params.AddressLine3 }}</p>
             <p style="margin: 0;">{{ .Params.AddressLine4 }}</p>
             <p style="margin: 0;">{{ .Params.AddressLine5 }}</p>
-            <p style="color: grey">{{ time.Format "Monday, January 2, 2006" .Date }}</p>
+            <p style="color: grey; margin: 0;">{{ time.Format "Monday, January 2, 2006" .Date }}</p>
 
             <div></div>
 
-            <p style="font-weight: bold;">Dear Hiring Manager,</p>
+            <p style="font-weight: bold;">Dear {{ .Params.Addressee }},</p>
             {{ .Content }}
-            <p>Thank you for your time and consideration.</p>
+            <p>Thank you for your time and consideration. I look forward to hearing from you.</p>
             <br>
-            <p>Sincerely,</p>
+            <p>{{ .Params.SignOff }},</p>
             <p style="margin: 0; font-weight: bold;">Matt Ware</p>
             <p style="margin: 0">{{ partial "svg.html" (dict "name" "phone" "width" "19" "height" "19") }}&nbsp;&nbsp;&nbsp;+44 07703693123</p>
             <p style="margin: 0">{{ partial "svg.html" (dict "name" "email" "width" "19" "height" "19") }}&nbsp;&nbsp;&nbsp;mattbware3@gmail.com</p>
