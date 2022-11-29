@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+
+    <div style="min-height: 100ph;">
+        <div class="cv-header-outer">
+            <div class="cv-header-inner">
+                <img style="float: right; border-radius: 50%; height: 70%; margin: 10px; margin-top: 0px;" src="/Images/pfp.jpg">
+                <h1 style="margin: 0; text-align: left;">Matt Ware</h1>
+                <h4 style="margin-top: 0; margin-bottom: 5px;">Game Programmer</h3>
+            </div>
+        </div>
+
+        <div class="cv-personal-header-outer">
+            <div class="cv-personal-header-inner">
+                <table style="color:black; width: 100%; text-align: center;">
+                    <tr class="space-under" style="vertical-align: top;">
+                        <td><b>Phone</b><br>+44 07703693123</td>
+                        <td><b>Email</b><br>mattbware3@gmail.com</td>
+                        <td><b>Address</b><br>146a Brockhurst Road<br>Gosport<br>PO12 3BA</td>
+                    </tr>
+                    <tr>
+                        <td><b>WWW</b><br><a href="https://www.mattware.dev/">mattware.dev</a></td>
+                        <td><b>GitHub</b><br><a href="https://www.github.com/mattieof">github.com/mattieof</a></td>
+                        <td><b>LinkedIn</b><br><a href="https://www.linkedin.com/in/mattbware/">linkedin.com/in/mattbware</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="width: 80%; margin: auto;">
+            <p style="margin-bottom: 3px; margin-top: 25px; color: grey; font-style: italic;">To: </p>
+            <p style="margin: 0;">{{ .Params.AddressLine1 }}</p>
+            <p style="margin: 0;">{{ .Params.AddressLine2 }}</p>
+            <p style="margin: 0;">{{ .Params.AddressLine3 }}</p>
+            <p style="margin: 0;">{{ .Params.AddressLine4 }}</p>
+            <p style="margin: 0;">{{ .Params.AddressLine5 }}</p>
+            <p style="color: grey">{{ time.Format "Monday, January 2, 2006" .Date }}</p>
+
+            <div></div>
+
+            <p style="font-weight: bold;">Dear Hiring Manager,</p>
+            <p>Climax Studios is one of the few game development studios nearby, and I'm eager to work at a strong studio like yours. I believe I have the skills nessesary to contribute heavily to your talented team, and I believe it would be an amazing opportunity to progress my career, and myself.</p>
+            <p>I have experience in game engines such as Unity and Unreal, and the programming languages they involve, such as C# and C++. I also have experience in using C++ for lower level applications such as game engine programming. I also have knowledge in the Adobe suite and 3D art toolkits such as Blender, and web development tools such as HTML, CSS, and JavaScript. A portfolio of my work is available at <a href="https://mattware.dev/">mattware.dev</a>.</p>
+            {{ .Content }}
+        </div>
+
+    {{ partial "javascript.html" . }}
+</html>
