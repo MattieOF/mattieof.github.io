@@ -10,7 +10,7 @@
   }
 
   .btn {
-    @apply bg-green-500 dark:bg-green-600 hover:bg-green-700 active:bg-green-900 text-white dark:text-neutral-200 font-bold py-2 px-4 rounded cursor-pointer select-none;
+    @apply bg-green-500 dark:bg-green-600 hover:bg-green-700 active:bg-green-900 text-neutral-900 dark:text-white dark:text-neutral-200 font-bold py-2 px-4 rounded cursor-pointer select-none;
   }
 
   .homepage-header {
@@ -18,11 +18,23 @@
   }
 
   .homepage-header-border {
-    @apply border-2 rounded-2xl border-neutral-600 p-5 bg-neutral-800
+    @apply border-2 rounded-3xl p-5 border-neutral-600 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-800
   }
 
   .theme-button-color {
     @apply bg-neutral-800 dark:bg-neutral-500 bg-opacity-100
+  }
+
+  .regular-text {
+    @apply text-neutral-900 dark:text-neutral-100
+  }
+
+  .email-box {
+    @apply border-neutral-400 bg-neutral-300 dark:bg-neutral-600 dark:border-neutral-900 border p-2 rounded-r
+  }
+
+  .icon {
+    @apply brightness-0 dark:brightness-100
   }
 }
 
