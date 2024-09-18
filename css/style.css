@@ -34,7 +34,7 @@
   }
 
   .icon {
-    @apply brightness-0 dark:brightness-100
+    @apply brightness-0 dark:invert /* Brightness 0 to remove color, invert to make it white on dark mode */
   }
 }
 
@@ -48,6 +48,34 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+.circleloader {
+  position: relative;
+  box-sizing: border-box;
+  margin-top: -10px;
+  border-radius: 16px;
+  width: 80px;
+  height: 20px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.4);
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 16px;
+    width: 20px;
+    height: 12px;
+    left: 0;
+    background: #FFF;
+    animation: push 1s infinite linear;
+  }
+}
+
+@keyframes push {
+  50% {
+    left: 56px;
+  }
+}
 
 .floating-button{
   position:fixed;

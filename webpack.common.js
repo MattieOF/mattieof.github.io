@@ -5,6 +5,7 @@ module.exports = {
     app: './js/app.js',
     blog: './js/blog.js',
     home: './js/home.js',
+    interactive_portfolio: './js/interactive_portfolio.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

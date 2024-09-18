@@ -29,7 +29,9 @@
 
   <div class="theme-button-color hidden"></div> <!-- This hidden div is to ensure that the theme-button-color class is actually included in the compiled stylesheet -->
 
-  <div class="homepage-header-border" style="margin-top: 15vh; margin-left: 15%; margin-right: 15%;">
+  <canvas id="interactive-canvas" class="w-screen h-screen bg-none"></canvas> <!-- This canvas is for the interactive section of the portfolio! -->
+
+  <div class="homepage-header-border mb-36" style="margin-top: 15vh; margin-left: 15%; margin-right: 15%;">
     <h1 class="homepage-header">Hello!</h1>
     <p class="regular-text mt-5">I'm working on improving my site with an interactive and up-to-date portfolio.</p>
     <p class="regular-text">For now, here's where you can find some of my work, and how to contact me:</p>
@@ -44,6 +46,8 @@
       </div>
     </ul>
   </div>
+
+  <script type="module" src="js/interactive_portfolio.js"></script>
 
 </body>
 
