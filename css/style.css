@@ -30,7 +30,7 @@
   }
 
   .email-box {
-    @apply bg-neutral-300 dark:bg-neutral-700 dark:border-neutral-900 p-2 rounded-r
+    @apply bg-neutral-300 dark:bg-neutral-700 dark:border-neutral-900 p-2 rounded-r text-black dark:text-neutral-300
   }
 
   .icon {
