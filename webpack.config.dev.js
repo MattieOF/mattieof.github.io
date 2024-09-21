@@ -8,6 +8,6 @@ module.exports = merge(common, {
     liveReload: true,
     hot: true,
     open: true,
-    static: ['./'],
+    static: ['./', './static'],
   },
 });
