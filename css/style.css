@@ -81,6 +81,10 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+.w-screen-without-scrollbar {
+  width: calc(100vw - (100vw - 100%));
+}
+
 .unclickable {
   pointer-events: none;
 }
