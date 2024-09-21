@@ -36,6 +36,38 @@
   .icon {
     @apply brightness-0 dark:invert /* Brightness 0 to remove color, invert to make it white on dark mode */
   }
+
+  .main-nav {
+    @apply absolute left-1/2 top-10 -translate-x-1/2
+  }
+
+  .main-nav ul {
+    @apply flex flex-row
+  }
+
+  .main-nav ul li {
+    @apply p-3 border-neutral-600 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 border-t-2 border-b-2 text-black dark:text-white
+  }
+
+  .main-nav ul li:first-child {
+    @apply rounded-l-3xl pl-4 border-l-2
+  }
+
+  .main-nav ul li:last-child {
+    @apply rounded-r-3xl pr-4 border-r-2
+  }
+
+  .main-nav ul li:hover {
+    @apply bg-neutral-400 dark:bg-neutral-900
+  }
+
+  .main-nav ul li.selected {
+    @apply bg-neutral-500 dark:bg-neutral-300 text-white dark:text-black
+  }
+
+  .main-nav ul li.clickable {
+    @apply cursor-pointer
+  }
 }
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -48,6 +80,10 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+.unclickable {
+  pointer-events: none;
+}
 
 .circleloader {
   position: relative;

@@ -1,5 +1,11 @@
 import '../css/style.css';
 
+const pages = [
+  { file: '/', title: 'Work' },
+  { file: '/blog.html', title: 'Blog' },
+  { file: '/contact.html', title: 'Contact' },
+]
+
 function applyTheme() {
   // Figure out if the theme should be dark
   let dark = false;
@@ -33,12 +39,43 @@ window.toggleDarkMode = function() {
   applyTheme();
 }
 
-// Add dark mode toggle
-window.onload = function() {
+function createThemeButton() {
   const button = document.createElement('button');
   button.className = 'theme-button-color floating-button';
   button.name = "theme-button";
   button.onclick = toggleDarkMode;
   button.innerText = document.documentElement.classList.contains("dark") ? '☀️' : '🌙';
   document.body.appendChild(button);
+}
+
+function createNav() {
+  const nav = document.createElement('nav');
+  nav.className = 'main-nav';
+
+  const ul = document.createElement('ul');
+  nav.appendChild(ul);
+
+  for (const page of pages) {
+    const li = document.createElement('li');
+    ul.appendChild(li);
+
+    li.innerText = page.title;
+    if (page.file == window.location.pathname)
+    {
+      li.classList.add('selected');
+    } else {
+      li.classList.add('clickable');
+    }
+
+    li.onclick = function() {
+      window.location = page.file;
+    }
+  }
+
+  document.body.insertBefore(nav, document.body.firstChild);
+}
+
+window.onload = function() {
+  createThemeButton();
+  createNav();
 }
