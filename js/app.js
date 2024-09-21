@@ -65,10 +65,10 @@ function createNav() {
       li.classList.add('selected');
     } else {
       li.classList.add('clickable');
-    }
 
-    li.onclick = function() {
-      window.location = page.file;
+      li.onclick = function() {
+        window.location = page.file;
+      }
     }
   }
 
