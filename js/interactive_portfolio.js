@@ -8,7 +8,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({ canvas: canvas });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(document.body.clientWidth, window.innerHeight);
 renderer.setClearColor(new THREE.Color(0x6495ED), 1);
 
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -19,8 +19,8 @@ scene.add( cube );
 camera.position.z = 5;
 
 window.onresize = ev => {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
+  renderer.setSize(document.body.clientWidth, window.innerHeight);
+  camera.aspect = document.body.clientWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 }
 
