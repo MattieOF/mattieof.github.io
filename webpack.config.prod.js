@@ -17,7 +17,7 @@ module.exports = merge(common, {
         { from: 'favicon.ico', to: 'favicon.ico' },
         { from: 'robots.txt', to: 'robots.txt' },
         { from: 'icon.png', to: 'icon.png' },
-        { from: 'index.html', to: '404.html' },
+        { from: 'index.html', to: 'index.html' },
         { from: '404.html', to: '404.html' },
         { from: 'blog.html', to: 'blog.html' },
         { from: 'contact.html', to: 'contact.html' },
