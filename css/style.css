@@ -46,6 +46,7 @@
   }
 
   .main-nav ul li {
+    transition: all 0.4s;
     @apply p-3 border-neutral-600 bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 border-t-2 border-b-2 text-black dark:text-white
   }
 
