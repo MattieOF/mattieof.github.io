@@ -38,7 +38,7 @@
   }
 
   .main-nav {
-    @apply absolute left-1/2 top-10 -translate-x-1/2
+    @apply absolute left-1/2 top-10 -translate-x-1/2 z-10
   }
 
   .main-nav ul {
@@ -81,6 +81,16 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
+#interactive-canvas {
+  --mask: linear-gradient(to bottom,
+  rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 85%,
+  rgba(0,0,0, 0) 98%, rgba(0,0,0, 0) 0
+  ) 100% 50% / 100% 100% repeat-x;
+
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
 
 .w-screen-without-scrollbar {
   width: calc(100vw - (100vw - 100%));
