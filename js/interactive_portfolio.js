@@ -2,6 +2,7 @@
 
 let THREE = require('three');
 let canvas = document.getElementById("interactive-canvas");
+let highlightedPlanetText = document.getElementById("highlighted-planet");
 let mouseNDC = new THREE.Vector2();
 let mouseHasMoved = true;
 
@@ -30,7 +31,8 @@ canvas.onmousemove = ev => {
   mouseHasMoved = true;
 };
 
-let planets = []
+let planets = [];
+let highlightedPlanet = null;
 
 void loadData();
 animate();
@@ -71,9 +73,13 @@ function animate() {
 
     raycaster.setFromCamera(mouseNDC, camera);
     const intersects = raycaster.intersectObjects(planets);
-
-    for (const intersect of intersects) {
-      intersect.object.material.color = new THREE.Color(1, 1, 1);
+    if (intersects.length > 0) {
+      highlightedPlanet = intersects[0].object;
+      highlightedPlanet.material.color = new THREE.Color(1, 0.3, 0.3);
+      highlightedPlanetText.innerHTML = highlightedPlanet.name;
+    } else {
+      highlightedPlanet = null;
+      highlightedPlanetText.innerHTML = "";
     }
 
     mouseHasMoved = false;
