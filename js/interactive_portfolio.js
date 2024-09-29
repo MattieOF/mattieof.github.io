@@ -3,6 +3,7 @@
 let THREE = require('three');
 let canvas = document.getElementById("interactive-canvas");
 let mouseNDC = new THREE.Vector2();
+let mouseHasMoved = true;
 
 const clock = new THREE.Clock();
 const scene = new THREE.Scene();
@@ -23,6 +24,12 @@ window.onresize = ev => {
   camera.updateProjectionMatrix();
 }
 
+canvas.onmousemove = ev => {
+  mouseNDC.x = (ev.offsetX / ev.target.clientWidth) * 2 - 1;
+  mouseNDC.y = (1 - (ev.offsetY / ev.target.clientHeight)) * 2 - 1;
+  mouseHasMoved = true;
+};
+
 let planets = []
 
 void loadData();
@@ -40,10 +47,12 @@ async function loadData() {
 
     for (let i = 0; i < 10; i++) {
       let newPlanet = planet.clone();
+      newPlanet.material = planet.material.clone();
       newPlanet.position.x = randomBetween(-20, 20);
       newPlanet.position.y = randomBetween(-20, 20);
       newPlanet.position.z = randomBetween(-20, -10);
       newPlanet.scale.setScalar(randomBetween(0.1, 2));
+      newPlanet.name = "Planet " + i;
       planets.push(newPlanet);
       scene.add(newPlanet);
     }
@@ -55,8 +64,20 @@ function animate() {
 
   const delta = clock.getDelta();
 
-  // Get NDC mouse coords
-  raycaster.setFromCamera(mouseNDC, camera);
+  if (mouseHasMoved) {
+    for (const object of planets) {
+      object.material.color = new THREE.Color(0.3, 0.3, 0.3);
+    }
+
+    raycaster.setFromCamera(mouseNDC, camera);
+    const intersects = raycaster.intersectObjects(planets);
+
+    for (const intersect of intersects) {
+      intersect.object.material.color = new THREE.Color(1, 1, 1);
+    }
+
+    mouseHasMoved = false;
+  }
 
   for (const object of planets) {
     object.rotation.x += 2 * delta;
