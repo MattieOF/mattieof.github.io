@@ -2,20 +2,20 @@
 
 let THREE = require('three');
 let canvas = document.getElementById("interactive-canvas");
-let highlightedPlanetText = document.getElementById("highlighted-planet");
 let mouseNDC = new THREE.Vector2();
-let mouseHasMoved = true;
+let mouseHasMoved = true, mouseHasClicked = false;
 
 const clock = new THREE.Clock();
 const scene = new THREE.Scene();
 scene.add(new THREE.DirectionalLight(0xBBCCFF, 3));
 scene.add(new THREE.AmbientLight(0x606060));
+scene.background = new THREE.Color(0x000000);
 const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
 let raycaster = new THREE.Raycaster(camera.position, new THREE.Vector3(0, 0, -1));
 
 const renderer = new THREE.WebGLRenderer({ canvas: canvas });
 renderer.setSize(document.body.clientWidth, window.innerHeight);
-renderer.setClearColor(new THREE.Color(0x6495ED), 1);
+renderer.setClearColor(new THREE.Color(0x000000), 0); // Transparent background
 
 camera.position.z = 5;
 
@@ -31,8 +31,11 @@ canvas.onmousemove = ev => {
   mouseHasMoved = true;
 };
 
+canvas.onmousedown = ev => {
+  mouseHasClicked = true;
+}
+
 let planets = [];
-let highlightedPlanet = null;
 
 void loadData();
 animate();
@@ -53,6 +56,9 @@ async function loadData() {
       newPlanet.position.x = randomBetween(-20, 20);
       newPlanet.position.y = randomBetween(-20, 20);
       newPlanet.position.z = randomBetween(-20, -10);
+      newPlanet.rotation.x = randomBetween(-360, 360);
+      newPlanet.rotation.y = randomBetween(-360, 360);
+      newPlanet.rotation.z = randomBetween(-360, 360);
       newPlanet.scale.setScalar(randomBetween(0.1, 2));
       newPlanet.name = "Planet " + i;
       planets.push(newPlanet);
@@ -66,7 +72,7 @@ function animate() {
 
   const delta = clock.getDelta();
 
-  if (mouseHasMoved) {
+  if (mouseHasMoved || mouseHasClicked) {
     for (const object of planets) {
       object.material.color = new THREE.Color(0.3, 0.3, 0.3);
     }
@@ -74,15 +80,15 @@ function animate() {
     raycaster.setFromCamera(mouseNDC, camera);
     const intersects = raycaster.intersectObjects(planets);
     if (intersects.length > 0) {
-      highlightedPlanet = intersects[0].object;
-      highlightedPlanet.material.color = new THREE.Color(1, 0.3, 0.3);
-      highlightedPlanetText.innerHTML = highlightedPlanet.name;
-    } else {
-      highlightedPlanet = null;
-      highlightedPlanetText.innerHTML = "";
+      if (mouseHasClicked)
+      {
+        console.log("Mouse clicked");
+        intersects.forEach(intersect => scene.remove(intersect.object));
+      }
     }
 
     mouseHasMoved = false;
+    mouseHasClicked = false;
   }
 
   for (const object of planets) {

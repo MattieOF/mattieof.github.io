@@ -14,6 +14,7 @@ function applyTheme() {
   } else {
     dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
+  window.darkThemeEnabled = dark;
 
   // Update the class list to apply the theme
   document.documentElement.classList.toggle('dark', dark);
