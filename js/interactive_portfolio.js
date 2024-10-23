@@ -3,7 +3,8 @@
 let THREE = require('three');
 let canvas = document.getElementById("interactive-canvas");
 let mouseNDC = new THREE.Vector2();
-let mouseHasMoved = true, mouseHasClicked = false;
+let mouseHasMoved = true;
+let mouseButtonPressed = -1;
 
 const clock = new THREE.Clock();
 const scene = new THREE.Scene();
@@ -32,7 +33,7 @@ canvas.onmousemove = ev => {
 };
 
 canvas.onmousedown = ev => {
-  mouseHasClicked = true;
+  mouseButtonPressed = ev.button;
 }
 
 let planets = [];
@@ -72,7 +73,7 @@ function animate() {
 
   const delta = clock.getDelta();
 
-  if (mouseHasMoved || mouseHasClicked) {
+  if (mouseHasMoved || mouseButtonPressed != -1) {
     for (const object of planets) {
       object.material.color = new THREE.Color(0.3, 0.3, 0.3);
     }
@@ -80,15 +81,14 @@ function animate() {
     raycaster.setFromCamera(mouseNDC, camera);
     const intersects = raycaster.intersectObjects(planets);
     if (intersects.length > 0) {
-      if (mouseHasClicked)
+      if (mouseButtonPressed == 0)
       {
-        console.log("Mouse clicked");
         intersects.forEach(intersect => scene.remove(intersect.object));
       }
     }
 
     mouseHasMoved = false;
-    mouseHasClicked = false;
+    mouseButtonPressed = -1;
   }
 
   for (const object of planets) {
