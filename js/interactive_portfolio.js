@@ -1,5 +1,17 @@
 ﻿'use strict';
 
+function lerpSmooth(a, b, r, delta) {
+  return (a - b) * Math.pow(r, delta) + b;
+}
+
+function lerpSmoothColor(a, b, r, delta) {
+  return new THREE.Color(
+    lerpSmooth(a.r, b.r, r, delta),
+    lerpSmooth(a.g, b.g, r, delta),
+    lerpSmooth(a.b, b.b, r, delta)
+  );
+}
+
 let THREE = require('three');
 let canvas = document.getElementById("interactive-canvas");
 let mouseNDC = new THREE.Vector2();
@@ -72,6 +84,11 @@ function animate() {
   requestAnimationFrame(animate);
 
   const delta = clock.getDelta();
+
+  // Update colours
+  // MW @todo @perf: I don't like the way this is done, but it's a quick way to get the effect I want
+  // Too much stuff done every frame
+  scene.background = lerpSmoothColor(scene.background, window.darkThemeEnabled ? new THREE.Color(0x000000) : new THREE.Color(0xFFFFFF), 0.1, delta);
 
   if (mouseHasMoved || mouseButtonPressed != -1) {
     for (const object of planets) {
