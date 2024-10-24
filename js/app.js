@@ -77,6 +77,9 @@ function createNav() {
 }
 
 window.onload = function() {
+  if (window.location.pathname.includes("cv"))
+    return;
+
   createThemeButton();
   createNav();
 }
