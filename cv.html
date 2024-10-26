@@ -9,18 +9,18 @@
 </head>
 
 <body>
-  <div style="max-width: 210mm; margin-left: auto; margin-right: auto;">
-    <div class="homepage-header-border pl-6 pr-6 pt-2 pb-2 mx-auto mt-6 mb-4 ml-10 mr-10">
-      <h1 class="homepage-header text-center text-3xl text-green-600">Matt Ware</h1>
+  <div style="max-width: 350mm; margin-left: auto; margin-right: auto;"> <!-- 210mm = A4. -->
+    <div class="homepage-header-border p-0 mx-auto mt-6 mb-4 ml-10 mr-10">
+      <h1 class="homepage-header text-center mt-2 text-3xl text-green-600">Matt Ware</h1>
       <ul class="flex flex-wrap list-none mt-2 gap-y-2 ml-auto mr-auto w-fit">
         <li class="space-x-0">
           <a href="https://mattware.dev/" target="_blank" class="btn inline-block" style="width: fit-content; border-bottom-right-radius: 0px; border-top-right-radius: 0px;">Website</a><!--
-          --><input type="text" class="email-box inline-block" value="mattware.dev" style="width: 115px" onclick="this.select(); this.setSelectionRange(0, 999999); navigator.clipboard.writeText(this.value);" readonly>
+          --><a href="https://mattware.dev/" class="email-box inline-block" style="width: 115px" readonly>mattware.dev</a>
         </li>
         <div class="w-4"></div> <!-- Spacer -->
         <li class="space-x-0">
           <a id="email-button" href="mailto:m@ttwa.re" target="_blank" class="btn inline-block" style="width: fit-content; border-bottom-right-radius: 0px; border-top-right-radius: 0px;">Email</a><!--
-          --><input id="email-box" type="text" class="email-box inline-block" value="m@ttwa.re" style="width: 95px" onclick="this.select(); this.setSelectionRange(0, 999999); navigator.clipboard.writeText(this.value);" readonly>
+          --><a href="mailto:m@ttwa.re" class="email-box inline-block" value="m@ttwa.re" style="width: 95px" readonly>m@ttwa.re</a>
         </li>
         <div class="w-4"></div> <!-- Spacer -->
         <li class="space-x-0">
@@ -28,12 +28,26 @@
           --><a href="https://www.linkedin.com/in/mattbware/" class="email-box inline-block" style="width: 95px" readonly>mattbware</a>
         </li>
       </ul>
-      <p class="regular-text pt-2">Second year Games Technology student looking for a year-long industry placement.</p>
+      <p class="regular-text ml-5 mr-5 pt-2">
+        Second year Games Technology student looking for a year-long industry placement.
+
+      </p>
+      <div class="gap-y-3 w-ful mt-3 bg-neutral-300 dark:bg-neutral-700 regular-text" style="border-bottom-right-radius: 1.4rem; border-bottom-left-radius: 1.4rem;">
+        <div class="flex flex-wrap list-none px-5 pt-2">
+          <h3 class="font-bold pr-5 whitespace-pre">Languages/APIs:</h3>
+          <p class="whitespace-pre">C++/C   |   C#   |   Java   |   OpenGL   |   SDL   |   Steamworks   |   HTML/CSS/JS</p>
+        </div>
+
+        <div class="flex flex-wrap list-none px-5 pt-2 pb-2">
+          <h3 class="font-bold pr-5">Tools/Techs:</h3>
+          <p class="whitespace-pre" style="margin-left: 33px;">Unreal Engine   |   Unity   |   JetBrains Suite   |   VS 2022/Code   |   Git/GitHub/CI</p>
+        </div>
+      </div>
     </div>
 
-    <div class="homepage-header-border pl-6 pr-6 pt-2 pb-2 mx-auto mb-4 ml-10 mr-10">
-      <h2 class="homepage-header text-center text-2xl">Education</h2>
-      <ul class="regular-text">
+    <div class="homepage-header-border p-0 mx-auto mt-6 mb-4 ml-10 mr-10">
+      <h2 class="homepage-header text-center text-2xl pt-2 pb-2">Education</h2>
+      <ul class="regular-text p-3 bg-neutral-300 dark:bg-neutral-700 regular-text" style="border-bottom-right-radius: 1.4rem; border-bottom-left-radius: 1.4rem;">
         <li>
           <h3>BSc Computer Games Technology (2023&ndash;2027)</h3>
           <b>University of Portsmouth</b>
@@ -50,20 +64,19 @@
       </ul>
     </div>
 
-    <div class="homepage-header-border pl-6 pr-6 pt-2 pb-2 mx-auto mb-4 ml-10 mr-10">
-      <h2 class="homepage-header text-center text-2xl">Projects</h2>
-      <ul>
-        <li></li>
-      </ul>
+    <div class="homepage-header-border p-0 mx-auto mt-6 mb-4 ml-10 mr-10">
+      <h2 class="homepage-header text-center text-2xl pt-2 pb-2">Projects & Experience</h2>
+      <div class="regular-text p-3 bg-neutral-300 dark:bg-neutral-700 regular-text" style="border-bottom-right-radius: 1.4rem; border-bottom-left-radius: 1.4rem;">
+
+      </div>
     </div>
 
-    <div class="homepage-header-border pl-6 pr-6 pt-2 pb-2 mx-auto mb-4 ml-10 mr-10">
-      <h2 class="homepage-header text-center text-2xl">Hobbies & Interests</h2>
-      <ul>
-        <li></li>
-      </ul>
+    <div class="homepage-header-border p-0 mx-auto mt-6 mb-4 ml-10 mr-10">
+      <h2 class="homepage-header text-center text-2xl pt-2 pb-2">Hobbies & Interests</h2>
+      <div class="regular-text p-3 bg-neutral-300 dark:bg-neutral-700 regular-text" style="border-bottom-right-radius: 1.4rem; border-bottom-left-radius: 1.4rem;">
+
+      </div>
     </div>
-  </div>
 </body>
 
 </html>

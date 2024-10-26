@@ -42,7 +42,7 @@ window.toggleDarkMode = function() {
 
 function createThemeButton() {
   const button = document.createElement('button');
-  button.className = 'theme-button-color floating-button';
+  button.className = 'hide-on-print theme-button-color floating-button';
   button.name = "theme-button";
   button.onclick = toggleDarkMode;
   button.innerText = document.documentElement.classList.contains("dark") ? '☀️' : '🌙';
@@ -77,9 +77,8 @@ function createNav() {
 }
 
 window.onload = function() {
+  createThemeButton();
   if (window.location.pathname.includes("cv"))
     return;
-
-  createThemeButton();
   createNav();
 }

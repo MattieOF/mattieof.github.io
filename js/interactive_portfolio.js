@@ -22,7 +22,7 @@ const clock = new THREE.Clock();
 const scene = new THREE.Scene();
 scene.add(new THREE.DirectionalLight(0xBBCCFF, 3));
 scene.add(new THREE.AmbientLight(0x606060));
-scene.background = new THREE.Color(0x000000);
+scene.background = new THREE.Color(window.darkThemeEnabled ? 0x000000 : 0xFFFFFF);
 const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
 let raycaster = new THREE.Raycaster(camera.position, new THREE.Vector3(0, 0, -1));
 
