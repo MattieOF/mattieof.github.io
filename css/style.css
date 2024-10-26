@@ -330,3 +330,9 @@ textarea {
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
+
+.hide-on-print {
+  @media print {
+    display: none !important;
+  }
+}
