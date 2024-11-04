@@ -69,6 +69,20 @@
   .main-nav ul li.clickable {
     @apply cursor-pointer
   }
+
+  .cv-project-odd {
+    background-color: #bbbbbb;
+    @apply dark:bg-neutral-600
+  }
+
+  .cv-project-tag {
+    font-size: 12px;
+    @apply ml-3 bg-neutral-700 px-2 py-1 my-auto rounded-full text-white dark:bg-neutral-500 dark:text-white
+  }
+
+  .cv-project-list {
+    @apply list-disc ml-4 mt-1
+  }
 }
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -336,3 +350,12 @@ textarea {
     display: none !important;
   }
 }
+
+.cv-list b {
+  font-weight: normal;
+}
+
+.cv-project {
+  padding: 7px 14px;
+}
+
