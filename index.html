@@ -30,24 +30,41 @@
   <div class="theme-button-color hidden"></div> <!-- This hidden div is to ensure that the theme-button-color class is actually included in the compiled stylesheet -->
   <div class="main-nav hidden"></div>
 
-  <div class="absolute z-10 w-screen-without-scrollbar h-screen pointer-events-none">
-    
+  <div class="absolute w-screen-without-scrollbar" style="margin-top: 90vh;">
+    <p class="w-fit mx-auto regular-text whitespace-pre text-neutral-800 dark:text-neutral-400 mb-2">Try clicking a planet to break it</p>
+    <p class="w-fit mx-auto regular-text whitespace-pre text-neutral-800 dark:text-neutral-400">👇    Scroll down to see my work</p>
   </div>
+
+  <div class="absolute z-10 w-screen-without-scrollbar h-screen pointer-events-none">
+    <div class="w-fit m-auto p-10" style="margin-top: 30vh; pointer-events: none; background-color: rgba(0, 0, 0, 0.1); backdrop-filter: blur(4px);">
+      <h1 class="homepage-header text-green-500 dark:text-green-700 text-center">Matt Ware</h1>
+      <p class="regular-text text-center mt-2 text-2xl">Game Programmer</p>
+      <p class="regular-text mt-10">Hi! I am a Games Technology student at the University of Portsmouth.</p>
+      <p class="regular-text"></p>
+    </div>
+  </div>
+
   <canvas id="interactive-canvas" class="w-screen-without-scrollbar h-screen bg-none overflow-x-hidden"></canvas> <!-- This canvas is for the interactive section of the portfolio! -->
 
   <div class="homepage-header-border mb-36" style="margin-top: 15vh; margin-left: 15%; margin-right: 15%;">
-    <h1 class="homepage-header">Hello!</h1>
+    <p class="homepage-header">Hello!</p>
     <p class="regular-text mt-5">I'm working on improving my site with an up-to-date portfolio.</p>
     <p class="regular-text">For now, here's where you can find some of my work, and how to contact me:</p>
-    <ul class="flex flex-wrap list-none mt-5">
-      <a href="https://github.com/mattieof" target="_blank" class="btn inline-block" style="width: fit-content">GitHub <img class="float-right ml-2 size-5 icon" src="img/Icons/GitHub.png"></a>
-      <div class="w-5"></div> <!-- Spacer -->
-      <a href="https://www.linkedin.com/in/mattbware/" target="_blank" class="btn inline-block" style="width: fit-content">LinkedIn <img class="float-right ml-2 size-5 icon" src="img/Icons/LinkedIn.png"></a>
-      <div class="w-5"></div> <!-- Spacer -->
+
+  </div>
+
+  <div class="homepage-footer pb-6 pt-10">
+    <ul class="flex flex-wrap list-none mt-2 gap-y-2 w-fit mx-auto justify-center">
       <div class="space-x-0">
         <a id="email-button" href="mailto:91gK3@mattwa.re" target="_blank" class="btn inline-block" style="width: fit-content; border-bottom-right-radius: 0px; border-top-right-radius: 0px;">Email</a><!--
-        --><input id="email-box" type="text" class="email-box inline-block" value="91gK3@mattwa.re" style="width: 100px" onclick="this.select(); this.setSelectionRange(0, 999999); navigator.clipboard.writeText(this.value);" readonly>
+          --><input id="email-box" type="text" class="email-box inline-block" value="91gK3@mattwa.re" style="width: 95px" onclick="this.select(); this.setSelectionRange(0, 999999); navigator.clipboard.writeText(this.value);" readonly>
       </div>
+      <div class="w-4"></div> <!-- Spacer -->
+      <a href="https://www.linkedin.com/in/mattbware/" target="_blank" class="btn inline-block" style="width: fit-content">LinkedIn <img class="float-right ml-2 size-5 icon" src="img/Icons/LinkedIn.png"></a>
+      <div class="w-4"></div> <!-- Spacer -->
+      <a href="https://github.com/mattiebw/" target="_blank" class="btn inline-block" style="width: fit-content">GitHub <img class="float-right ml-2 size-5 icon" src="img/Icons/GitHub.png"></a>
+      <div class="w-4"></div> <!-- Spacer -->
+      <a href="https://mattieof.itch.io/" target="_blank" class="btn inline-block" style="width: fit-content">itch.io <img class="float-right ml-2 size-5 icon" src="img/Icons/ItchIo.png"></a>
     </ul>
   </div>
 

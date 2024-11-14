@@ -49,6 +49,8 @@ canvas.onmousedown = ev => {
 }
 
 let planets = [];
+let fracturedPlanets = [];
+let fracturedPlanet = null;
 
 void loadData();
 animate();
@@ -59,21 +61,30 @@ async function loadData() {
 
     const loader = new GLTFLoader();
     const planetScene = await loader.loadAsync('PortfolioAssets/PlanetTest.glb');
+    fracturedPlanet = await loader.loadAsync('PortfolioAssets/FracturedPlanet.glb');
 
     let planet = planetScene.scene.children[0];
     planet.material = new THREE.MeshPhysicalMaterial({color: new THREE.Color(.3, .3, .3), flatShading: true});
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 50; i++) {
       let newPlanet = planet.clone();
       newPlanet.material = planet.material.clone();
-      newPlanet.position.x = randomBetween(-20, 20);
-      newPlanet.position.y = randomBetween(-20, 20);
-      newPlanet.position.z = randomBetween(-20, -10);
+      let col = new THREE.Color();
+      col.setHSL(Math.random(), 0.8, 0.5);
+      newPlanet.material.color = col;
+      newPlanet.rotationSpeed = new THREE.Vector2(randomBetween(-0.6, 0.6), randomBetween(-0.6, 0.6));
+
+      do {
+        newPlanet.position.x = randomBetween(-80, 80);
+        newPlanet.position.y = randomBetween(-40, 40);
+        newPlanet.position.z = randomBetween(-50, -60);
+      } while (planets.some(p => planetOverlapsPlanet(p, newPlanet)));
+
       newPlanet.rotation.x = randomBetween(-360, 360);
       newPlanet.rotation.y = randomBetween(-360, 360);
       newPlanet.rotation.z = randomBetween(-360, 360);
-      newPlanet.scale.setScalar(randomBetween(0.1, 2));
-      newPlanet.name = "Planet " + i;
+      newPlanet.scale.setScalar(randomBetween(0.4, 1.2));
+
       planets.push(newPlanet);
       scene.add(newPlanet);
     }
@@ -91,17 +102,32 @@ function animate() {
   scene.background = lerpSmoothColor(scene.background, window.darkThemeEnabled ? new THREE.Color(0x000000) : new THREE.Color(0xFFFFFF), 0.1, delta);
 
   if (mouseHasMoved || mouseButtonPressed != -1) {
-    for (const object of planets) {
-      object.material.color = new THREE.Color(0.3, 0.3, 0.3);
-    }
-
     raycaster.setFromCamera(mouseNDC, camera);
     const intersects = raycaster.intersectObjects(planets);
     if (intersects.length > 0) {
       if (mouseButtonPressed == 0)
       {
-        intersects.forEach(intersect => scene.remove(intersect.object));
+        let obj = intersects[0].object;
+        for (let i = 0; i < 6; i++) {
+          let newPlanet = fracturedPlanet.scene.children[i].clone();
+          newPlanet.velocity = newPlanet.position.clone().multiplyScalar(10);
+          newPlanet.position.add(obj.position);
+          newPlanet.rotation.set(obj.rotation.x, obj.rotation.y, obj.rotation.z);
+          newPlanet.scale.setScalar(obj.scale.x);
+          newPlanet.material = obj.material.clone();
+          newPlanet.rotationSpeed = new THREE.Vector2(randomBetween(-0.6, 0.6), randomBetween(-0.6, 0.6));
+          fracturedPlanets.push(newPlanet);
+          scene.add(newPlanet);
+        }
+
+        scene.remove(intersects[0].object);
+        planets.splice(planets.indexOf(intersects[0].object), 1);
       }
+    }
+
+    const test = raycaster.intersectObjects(fracturedPlanets);
+    if (test.length > 0) {
+      console.log(test[0].object);
     }
 
     mouseHasMoved = false;
@@ -109,8 +135,16 @@ function animate() {
   }
 
   for (const object of planets) {
-    object.rotation.x += 2 * delta;
-    object.rotation.y += 2 * delta;
+    object.rotation.x += object.rotationSpeed.x * delta;
+    object.rotation.y += object.rotationSpeed.y * delta;
+  }
+
+  for (const object of fracturedPlanets) {
+    object.position.add(object.velocity.clone().multiplyScalar(delta));
+    object.velocity.multiplyScalar(1 - (0.5 * delta));
+    object.rotation.x += object.rotationSpeed.x * delta;
+    object.rotation.y += object.rotationSpeed.y * delta;
+    object.rotationSpeed.multiplyScalar(1 - (0.08 * delta));
   }
 
   renderer.render(scene, camera);
@@ -118,4 +152,13 @@ function animate() {
 
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
+}
+
+function planetOverlapsPlanet(p1, p2) {
+  let p1pos = p1.position.clone();
+  let d = p1pos.sub(p2.position);
+  let squaredDistance = d.dot(d);
+  let radiusSum = (p1.scale.x * 3) + (p2.scale.x * 3);
+  let squaredRadii = radiusSum * radiusSum;
+  return squaredDistance <= squaredRadii;
 }
