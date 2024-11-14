@@ -26,7 +26,7 @@ scene.background = new THREE.Color(window.darkThemeEnabled ? 0x000000 : 0xFFFFFF
 const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
 let raycaster = new THREE.Raycaster(camera.position, new THREE.Vector3(0, 0, -1));
 
-const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+const renderer = new THREE.WebGLRenderer({canvas: canvas});
 renderer.setSize(document.body.clientWidth, window.innerHeight);
 renderer.setClearColor(new THREE.Color(0x000000), 0); // Transparent background
 
@@ -105,8 +105,7 @@ function animate() {
     raycaster.setFromCamera(mouseNDC, camera);
     const intersects = raycaster.intersectObjects(planets);
     if (intersects.length > 0) {
-      if (mouseButtonPressed == 0)
-      {
+      if (mouseButtonPressed == 0) {
         let obj = intersects[0].object;
         for (let i = 0; i < 6; i++) {
           let newPlanet = fracturedPlanet.scene.children[i].clone();
@@ -124,12 +123,7 @@ function animate() {
         planets.splice(planets.indexOf(intersects[0].object), 1);
       }
     }
-
-    const test = raycaster.intersectObjects(fracturedPlanets);
-    if (test.length > 0) {
-      console.log(test[0].object);
-    }
-
+    
     mouseHasMoved = false;
     mouseButtonPressed = -1;
   }
