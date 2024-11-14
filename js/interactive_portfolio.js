@@ -101,20 +101,20 @@ function animate() {
   // Too much stuff done every frame
   scene.background = lerpSmoothColor(scene.background, window.darkThemeEnabled ? new THREE.Color(0x000000) : new THREE.Color(0xFFFFFF), 0.1, delta);
 
-  if (mouseHasMoved || mouseButtonPressed != -1) {
+  if (mouseHasMoved || mouseButtonPressed !== -1) {
     raycaster.setFromCamera(mouseNDC, camera);
     const intersects = raycaster.intersectObjects(planets);
     if (intersects.length > 0) {
-      if (mouseButtonPressed == 0) {
+      if (mouseButtonPressed === 0) {
         let obj = intersects[0].object;
         for (let i = 0; i < 6; i++) {
           let newPlanet = fracturedPlanet.scene.children[i].clone();
-          newPlanet.velocity = newPlanet.position.clone().multiplyScalar(10);
+          newPlanet.velocity = newPlanet.position.clone().multiplyScalar(randomBetween(3, 15));
           newPlanet.position.add(obj.position);
           newPlanet.rotation.set(obj.rotation.x, obj.rotation.y, obj.rotation.z);
           newPlanet.scale.setScalar(obj.scale.x);
           newPlanet.material = obj.material.clone();
-          newPlanet.rotationSpeed = new THREE.Vector2(randomBetween(-0.6, 0.6), randomBetween(-0.6, 0.6));
+          newPlanet.rotationSpeed = new THREE.Vector2(randomBetween(-2, 2), randomBetween(-2, 2));
           fracturedPlanets.push(newPlanet);
           scene.add(newPlanet);
         }
@@ -123,7 +123,7 @@ function animate() {
         planets.splice(planets.indexOf(intersects[0].object), 1);
       }
     }
-    
+
     mouseHasMoved = false;
     mouseButtonPressed = -1;
   }
