@@ -94,7 +94,8 @@ async function loadData() {
 function animate() {
   requestAnimationFrame(animate);
 
-  const delta = clock.getDelta();
+  let delta = clock.getDelta();
+  delta = clamp(delta, 0, 1);
 
   // Update colours
   // MW @todo @perf: I don't like the way this is done, but it's a quick way to get the effect I want
@@ -155,4 +156,8 @@ function planetOverlapsPlanet(p1, p2) {
   let radiusSum = (p1.scale.x * 3) + (p2.scale.x * 3);
   let squaredRadii = radiusSum * radiusSum;
   return squaredDistance <= squaredRadii;
+}
+
+function clamp(num, lower, upper) {
+  return Math.min(Math.max(num, lower), upper);
 }

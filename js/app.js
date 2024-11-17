@@ -2,7 +2,8 @@ import '../css/style.css';
 
 const pages = [
   { file: '/', title: 'Work' },
-  { file: '/blog.html', title: 'Blog' },
+  // { file: '/blog.html', title: 'Blog' }, // Blog is not ready yet
+  { file: '/MattWareCV.pdf', title: 'CV' },
   { file: '/contact.html', title: 'Contact' },
 ]
 
@@ -12,7 +13,8 @@ function applyTheme() {
   if ('theme' in localStorage) {
     dark = localStorage.theme === 'dark';
   } else {
-    dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    dark = true; // By default, use dark theme. It looks better.
   }
   window.darkThemeEnabled = dark;
 

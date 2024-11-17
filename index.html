@@ -46,11 +46,37 @@
 
   <canvas id="interactive-canvas" class="w-screen-without-scrollbar h-screen bg-none overflow-x-hidden"></canvas> <!-- This canvas is for the interactive section of the portfolio! -->
 
-  <div class="homepage-header-border mb-36" style="margin-top: 15vh; margin-left: 15%; margin-right: 15%;">
-    <p class="homepage-header">Hello!</p>
-    <p class="regular-text mt-5">I'm working on improving my site with an up-to-date portfolio.</p>
-    <p class="regular-text">For now, here's where you can find some of my work, and how to contact me:</p>
-
+  <div class="w-screen-without-scrollbar">
+    <div class="portfolio-project-container">
+      <div id="proj-ecoscape" class="portfolio-project" onclick="portfolioItemClicked('ecoscape');">
+        <video autoplay muted loop class="portfolio-video">
+          <source src="Videos/EcoscapeMontage.webm" type="video/webm">
+        </video>
+        <div class="portfolio-project-header">
+          <div class="inline"><b>Ecoscape</b></div>
+          <div class="inline">
+            <img class="inline ml-2 size-5 icon" src="Images/Icons/People.png">
+            2
+            <img class="inline ml-2 size-5 icon" src="Images/Icons/Calendar.png">
+            2023
+            <img class="inline ml-2 size-5 icon" src="Images/Icons/Clock.png">
+            3 Months
+            <img class="inline ml-2 size-5 icon" src="Images/Icons/Tool.png">
+            UE5
+          </div>
+        </div>
+        <div id="ecoscape-desc" class="portfolio-project-desc">
+          Helloooo
+        </div>
+        <div id="ecoscape-more-desc" class="portfolio-project-desc hidden">
+          <p>Hello!</p>
+          <p>Hello!</p>
+          <p>Hello!</p>
+          <p>Hello!</p>
+          <p>Hello!</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="homepage-footer pb-6 pt-10">
@@ -66,6 +92,13 @@
       <div class="w-4"></div> <!-- Spacer -->
       <a href="https://mattieof.itch.io/" target="_blank" class="btn inline-block" style="width: fit-content">itch.io <img class="float-right ml-2 size-5 icon" src="img/Icons/ItchIo.png"></a>
     </ul>
+    <p class="text-center mt-4 text-neutral-400 dark:text-neutral-600">no template to credit - all custom code in html, css, and js!</p>
+    <p class="text-center text-neutral-400 dark:text-neutral-600">uses
+      <a href="https://threejs.org/" target="_blank" style="text-decoration: underline">three.js</a>,
+      <a href="https://tailwindcss.com/" target="_blank" style="text-decoration: underline">tailwind</a>,
+      <a href="https://webpack.js.org/" target="_blank" style="text-decoration: underline">webpack</a>
+    </p>
+    <p class="text-center text-neutral-400 dark:text-neutral-600">matt ware, 2024</p>
   </div>
 
   <script type="module" src="js/interactive_portfolio.js"></script>
