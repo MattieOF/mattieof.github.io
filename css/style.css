@@ -105,7 +105,7 @@
     @apply flex flex-wrap justify-center mx-auto
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 550px) {
     .portfolio-project-container {
       font-size: 10px;
     }
@@ -138,7 +138,7 @@
   .portfolio-project-header {
     margin-top: -300px;
     transition: 0.3s all;
-    background-color: rgba(1, 1, 1, 0.2);
+    background-color: rgba(1, 1, 1, 0.6);
     backdrop-filter: blur(4px);
     @apply flex justify-between rounded-t-3xl px-4 py-2 text-white
   }
@@ -162,6 +162,10 @@
   .portfolio-project-list {
     max-width: 480px;
     @apply list-disc ml-4 mt-1
+  }
+
+  .portfolio-project-desc a {
+    @apply underline
   }
 }
 
