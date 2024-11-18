@@ -37,6 +37,10 @@
     @apply brightness-0 dark:invert /* Brightness 0 to remove color, invert to make it white on dark mode */
   }
 
+  .icon-white {
+    @apply brightness-0 invert
+  }
+
   .main-nav {
     @apply absolute left-1/2 top-10 -translate-x-1/2 z-10
   }
@@ -95,9 +99,16 @@
   }
 
   .portfolio-project-container {
+    align-items: flex-start;
     max-width: 1400px;
     margin-bottom: 50px;
     @apply flex flex-wrap justify-center mx-auto
+  }
+
+  @media (max-width: 450px) {
+    .portfolio-project-container {
+      font-size: 10px;
+    }
   }
 
   .portfolio-project {
@@ -129,7 +140,7 @@
     transition: 0.3s all;
     background-color: rgba(1, 1, 1, 0.2);
     backdrop-filter: blur(4px);
-    @apply flex justify-between rounded-t-3xl px-4 py-2
+    @apply flex justify-between rounded-t-3xl px-4 py-2 text-white
   }
 
   .portfolio-video {
@@ -144,7 +155,13 @@
   .portfolio-project-desc {
     padding-top: 265px;
     transition: 0.3s all;
+    white-space: wrap;
     @apply px-4 pb-3
+  }
+
+  .portfolio-project-list {
+    max-width: 480px;
+    @apply list-disc ml-4 mt-1
   }
 }
 
