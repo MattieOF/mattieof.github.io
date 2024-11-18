@@ -167,6 +167,23 @@
   .portfolio-project-desc a {
     @apply underline
   }
+
+  .planet-hint {
+    transition: 2s all;
+    @apply w-fit mx-auto regular-text text-neutral-800 dark:text-neutral-400 mb-2
+  }
+
+  .portfolio-icon {
+    @apply inline ml-2 size-5 icon-white
+  }
+
+  .portfolio-icon-button {
+    @apply portfolio-icon cursor-pointer
+  }
+
+  .portfolio-icon-button:hover {
+    @apply invert-0
+  }
 }
 
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
