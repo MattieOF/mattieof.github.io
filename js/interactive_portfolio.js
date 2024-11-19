@@ -18,6 +18,9 @@ let mouseNDC = new THREE.Vector2();
 let mouseHasMoved = true;
 let mouseButtonPressed = -1;
 
+let hintVisible = true;
+let planetsBroken = 0;
+
 const clock = new THREE.Clock();
 const scene = new THREE.Scene();
 scene.add(new THREE.DirectionalLight(0xBBCCFF, 3));
@@ -120,6 +123,11 @@ function animate() {
           scene.add(newPlanet);
         }
 
+        planetsBroken++;
+        if (planetsBroken > 1 && hintVisible) {
+          hintVisible = false;
+          document.getElementById("planet-hint-text").style.opacity = 0;
+        }
         scene.remove(intersects[0].object);
         planets.splice(planets.indexOf(intersects[0].object), 1);
       }

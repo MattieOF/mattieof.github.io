@@ -33,8 +33,7 @@
 
 <div class="absolute w-screen-without-scrollbar z-10 pointer-events-none"
      style="margin-bottom: 10vh; margin-top: 85vh;">
-  <p class="w-fit mx-auto regular-text text-neutral-800 dark:text-neutral-400 mb-2">Try clicking a planet
-    to break it</p>
+  <p id="planet-hint-text" class="planet-hint">Try clicking a planet to break it</p>
 </div>
 
 <div class="absolute z-10 w-screen-without-scrollbar h-screen pointer-events-none">
@@ -42,7 +41,8 @@
        style="margin-top: 30vh; pointer-events: none; background-color: rgba(0, 0, 0, 0.1); backdrop-filter: blur(4px); max-width: 600px;">
     <h1 class="homepage-header text-green-500 dark:text-green-700 text-center">Matt Ware</h1>
     <p class="regular-text text-center mt-2 text-2xl">Game Programmer</p>
-    <p class="regular-text mt-10">Hi! I am a Games Technology student at the University of Portsmouth, currently
+    <p class="regular-text mt-10 text-center">Hi! I am a Games Technology student at the University of Portsmouth,
+      currently
       seeking an industry placement as a game or engine programmer. </p>
     <p class="regular-text"></p>
     <p class="text-center mt-10 regular-text text-neutral-800 dark:text-neutral-400">👇 Scroll down to see
@@ -56,7 +56,7 @@
 <p id="projects" class="text-5xl text-green-500 font-bold text-center mt-10 mb-2">Projects & Experience</p>
 <p class="regular-text text-center mb-6">Click on a project to see more info</p>
 
-<hr class="mx-auto" style="width: 1400px; max-width: 85vw;">
+<hr class="mx-auto border-green-500" style="width: 1400px; max-width: 85vw;">
 
 <div class="w-screen-without-scrollbar">
   <div class="portfolio-project-container">
@@ -68,25 +68,28 @@
       <div class="portfolio-project-header">
         <div class="inline my-auto"><b>Ecoscape</b></div>
         <div class="inline">
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/People.png">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
           2
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Calendar.png">
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
           2023
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Clock.png">
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
           3 Months
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Tool.png">
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
           UE5
+          <a href="https://github.com/mattiebw/ecoscape" target="_blank"><img class="portfolio-icon-button"
+                                                                              src="img/Icons/GitHub.png"></a>
         </div>
       </div>
       <div id="ecoscape-desc" class="portfolio-project-desc">
         <p style="max-width: 480px;">Created with an artist partner, Ecoscape lets the player create their own animal
-          habitat. It features procedural generation, a data-driven design, and many custom-built AIs.</p>
+          habitat. It features procedural generation, a designer-accessible data-driven design, and many custom-built
+          AIs.</p>
       </div>
       <div id="ecoscape-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
           <li>Used Unreal Engine's procedural mesh API to create dynamic terrain, fences, and other visualisations.</li>
           <li>Used custom data assets to easily create new items, including editor tools to automatically generate
-            icons, significantly increasing productivity.
+            icons, significantly increasing productivity, especially for my partner.
           </li>
           <li>Integrated external libraries (FastNoiseLite) into an Unreal C++ project.</li>
           <li>Created many AI behaviours and animation graphs for different animals.</li>
@@ -102,14 +105,16 @@
       <div class="portfolio-project-header">
         <div class="inline my-auto"><b>Pirate Survivors</b></div>
         <div class="inline">
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/People.png">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
           9
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Calendar.png">
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
           2024
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Clock.png">
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
           4 Months
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Tool.png">
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
           UE5
+          <a href="https://github.com/mattiebw/PirateSurvivors" target="_blank"><img class="portfolio-icon-button"
+                                                                                     src="img/Icons/GitHub.png"></a>
         </div>
       </div>
       <div id="ps-desc" class="portfolio-project-desc">
@@ -141,20 +146,23 @@
       <div class="portfolio-project-header">
         <div class="inline my-auto"><b>Echoes Of Serenity</b></div>
         <div class="inline">
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/People.png">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
           Solo
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Calendar.png">
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
           2024
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Clock.png">
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
           4 Days
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Tool.png">
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
           C#/Raylib
+          <a href="https://github.com/mattiebw/echoesofserenity" target="_blank"><img class="portfolio-icon-button"
+                                                                                      src="img/Icons/GitHub.png"></a>
         </div>
       </div>
       <div id="eos-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">As the sole programmer, I worked with artists and designers to create a multiplayer
-          survivors-like. I created systems to smoothly replicate thousands of actors, and editors for designers to
-          easily create upgrades without code.</p>
+        <p style="max-width: 480px;">For a week-long university game jam, I created a top-down survival game in C# and
+          Raylib. With no engine, I had to create a tilemap renderer, world generator,
+          UI system, audio system, and all the games content and art. The game received the <b>most ambitious idea</b>
+          award and impressed industry professionals in attendance.</p>
       </div>
       <div id="eos-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -174,20 +182,22 @@
       <div class="portfolio-project-header">
         <div class="inline my-auto"><b>Chemicode</b></div>
         <div class="inline">
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/People.png">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
           Solo
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Calendar.png">
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
           2023
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Clock.png">
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
           2 Months
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Tool.png">
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
           UE5
+          <a href="https://github.com/mattiebw/chemicodeprototype" target="_blank"><img class="portfolio-icon-button"
+                                                                                        src="img/Icons/GitHub.png"></a>
         </div>
       </div>
       <div id="chemicode-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">As the sole programmer, I worked with artists and designers to create a multiplayer
-          survivors-like. I created systems to smoothly replicate thousands of actors, and editors for designers to
-          easily create upgrades without code.</p>
+        <p style="max-width: 480px;">Created to a brief for an educational game, Chemicode simulates chemical
+          interactions. A player can complete an assignment with physical actions, or with a script created in a custom
+          drag-and-drop scripting language created for the game in C++. I also created all the art.</p>
       </div>
       <div id="chemicode-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -211,29 +221,34 @@
       <div class="portfolio-project-header">
         <div class="inline my-auto"><b>PAPI</b></div>
         <div class="inline">
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/People.png">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
           5
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Calendar.png">
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
           2024
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Clock.png">
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
           3 Months (Ongoing)
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Tool.png">
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
           C++ / OpenGL
+          <a href="https://github.com/mattiebw/papi" target="_blank"><img class="portfolio-icon-button"
+                                                                          src="img/Icons/GitHub.png"></a>
         </div>
       </div>
       <div id="papi-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">As the sole programmer, I worked with artists and designers to create a multiplayer
-          survivors-like. I created systems to smoothly replicate thousands of actors, and editors for designers to
-          easily create upgrades without code.</p>
+        <p style="max-width: 480px;">An ongoing project for my second year, this project is a multiplayer 2D shooter. It
+          features a custom OpenGL renderer with batching and instancing, Steamworks-based networking, a C++ reflection
+          system, and FMOD audio. I also manage the project.</p>
       </div>
       <div id="papi-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
-          <li>Created a custom block-based visual scripting UI and virtual machine in C++ to facilitate a unique
-            gameplay mechanic for a chemistry puzzler.
+          <li>Helped write a multiplayer 2D game in C++ from the ground up.</li>
+          <li>Wrote a renderer in OpenGL, featuring batched rendering, instanced tilemap rendering, and MSDF text
+            rendering.
           </li>
-          <li>Created data models to easily implement interactions between different chemicals.</li>
-          <li>Stuck to deadlines and hosted playtests to gather information on what should be changed.</li>
-          <li>View the source code <a href="https://github.com/mattiebw/chemicodeprototype" target="_blank">here</a>.
+          <li>Implemented multiplayer features with Steamworks, including encoding and decoding binary messages, and
+            creating a basic C++ reflection system that processes header files using C#.
+          </li>
+          <li>Held weekly stand-ups to track progress with teammates, help resolve roadblocks, and assign tasks.</li>
+          <li>View the source code <a href="https://github.com/mattiebw/papi" target="_blank">here</a>.
           </li>
         </ul>
       </div>
@@ -246,28 +261,26 @@
       <div class="portfolio-project-header">
         <div class="inline my-auto"><b>2D Games</b></div>
         <div class="inline">
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/People.png">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
           Solo / 3
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Calendar.png">
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
           2022
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Clock.png">
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
           2-3 Months
-          <img class="inline ml-2 size-5 icon-white" src="Images/Icons/Tool.png">
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
           GameMaker
         </div>
       </div>
       <div id="gm-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">As the sole programmer, I worked with artists and designers to create a multiplayer
-          survivors-like. I created systems to smoothly replicate thousands of actors, and editors for designers to
-          easily create upgrades without code.</p>
+        <p style="max-width: 480px;">During my college course, I wrote multiple 2D games in GameMaker. One was a
+          top-down survival horror, and the other a character-switching puzzle platformer.</p>
       </div>
       <div id="gm-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
-          <li>Created a custom block-based visual scripting UI and virtual machine in C++ to facilitate a unique
-            gameplay mechanic for a chemistry puzzler.
-          </li>
-          <li>Created data models to easily implement interactions between different chemicals.</li>
-          <li>Stuck to deadlines and hosted playtests to gather information on what should be changed.</li>
+          <li>Created a custom UI system in GameMaker Language.</li>
+          <li>Implemented a json-based save and load system.</li>
+          <li>Implemented a system for smooth camera movement.</li>
+          <li>Designed puzzles utilising the multi-character mechanic.</li>
           <li>View the source code for <a href="https://github.com/mattiebw/subhuman" target="_blank">Subhuman</a> and
             <a href="https://github.com/mattiebw/scrapresurrection" target="_blank">Scrap Resurrection</a>.
           </li>
@@ -277,6 +290,8 @@
 
   </div>
 </div>
+
+<hr class="mx-auto mb-10 border-green-500 -mt-5" style="width: 1400px; max-width: 85vw;">
 
 <div class="homepage-footer pb-6 pt-10">
   <ul class="flex flex-wrap list-none mt-8 gap-y-2 w-fit mx-auto justify-center">
