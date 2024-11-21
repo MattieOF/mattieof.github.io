@@ -80,7 +80,7 @@ function createNav() {
 
 window.onload = function() {
   createThemeButton();
-  if (window.location.pathname.includes("cv"))
+  if (window.location.pathname.includes("cv") || window.location.pathname.includes("cover-letter"))
     return;
   createNav();
 }

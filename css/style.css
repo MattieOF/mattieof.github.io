@@ -113,7 +113,7 @@
 
   .portfolio-project {
     width: 550px;
-    white-space: nowrap;
+    white-space: wrap;
     transition: 0.3s all;
     @apply bg-neutral-300 dark:bg-neutral-800 m-5 rounded-3xl regular-text border-green-600 dark:border-green-500 border-2 overflow-hidden
   }

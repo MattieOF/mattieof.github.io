@@ -139,6 +139,49 @@
       </div>
     </div>
 
+    <div id="proj-papi" class="portfolio-project" onclick="portfolioItemClicked('papi');">
+      <!--      <video autoplay muted loop class="portfolio-video">-->
+      <!--        <source src="Videos/PAPIMontage.webm" type="video/webm">-->
+      <!--      </video>-->
+      <img src="Images/PAPI.png" class="portfolio-video">
+      <div class="portfolio-project-header">
+        <div class="inline my-auto"><b>PAPI</b></div>
+        <div class="inline">
+          <img class="portfolio-icon" src="Images/Icons/People.png">
+          5
+          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2024
+          <img class="portfolio-icon" src="Images/Icons/Clock.png">
+          3 Months (Ongoing)
+          <img class="portfolio-icon" src="Images/Icons/Tool.png">
+          C++ / OpenGL
+          <a href="https://github.com/mattiebw/papi" target="_blank"><img class="portfolio-icon-button"
+                                                                          src="img/Icons/GitHub.png"></a>
+        </div>
+      </div>
+      <div id="papi-desc" class="portfolio-project-desc">
+        <p style="max-width: 480px;">An ongoing group project for my second year, this project is a multiplayer 2D shooter. It
+          features a custom OpenGL renderer with batching and instancing, Steamworks-based networking, a C++ preprocessor
+          written in C# to autogenerate reflection and RPC supporting code, and FMOD audio. I also manage the project.</p>
+      </div>
+      <div id="papi-more-desc" class="portfolio-project-desc hidden">
+        <ul class="portfolio-project-list">
+          <li>Helped write a multiplayer 2D game in C++ from the ground up.</li>
+          <li>Wrote a renderer in OpenGL, featuring batched rendering, instanced tilemap rendering, and MSDF text
+            rendering.
+          </li>
+          <li>Wrote a preprocessor in C# to process header files and generate relevant reflection code, such as lists of types and functions,
+            and functions supporting Remote Procedure Calls. Inspired by Unreal Engine's Unreal Header Tool.</li>
+          <li>Implemented multiplayer features with Steamworks, including encoding and decoding binary messages, using UUIDs to
+            keep track of objects between clients, and autogenerating supporting code to do this.
+          </li>
+          <li>Held weekly stand-ups to track progress with teammates, help resolve roadblocks, and assign tasks.</li>
+          <li>View the source code <a href="https://github.com/mattiebw/papi" target="_blank">here</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div id="proj-eos" class="portfolio-project" onclick="portfolioItemClicked('eos');">
       <video autoplay muted loop class="portfolio-video">
         <source src="Videos/EOSMontage.webm" type="video/webm">
@@ -208,47 +251,6 @@
           <li>Stuck to deadlines and hosted playtests to gather information on what should be changed.</li>
           <li>Created models in Blender and textured them in Substance Painter.</li>
           <li>View the source code <a href="https://github.com/mattiebw/chemicodeprototype" target="_blank">here</a>.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="proj-papi" class="portfolio-project" onclick="portfolioItemClicked('papi');">
-      <!--      <video autoplay muted loop class="portfolio-video">-->
-      <!--        <source src="Videos/PAPIMontage.webm" type="video/webm">-->
-      <!--      </video>-->
-      <img src="Images/PAPI.png" class="portfolio-video">
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>PAPI</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          5
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2024
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          3 Months (Ongoing)
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          C++ / OpenGL
-          <a href="https://github.com/mattiebw/papi" target="_blank"><img class="portfolio-icon-button"
-                                                                          src="img/Icons/GitHub.png"></a>
-        </div>
-      </div>
-      <div id="papi-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">An ongoing project for my second year, this project is a multiplayer 2D shooter. It
-          features a custom OpenGL renderer with batching and instancing, Steamworks-based networking, a C++ reflection
-          system, and FMOD audio. I also manage the project.</p>
-      </div>
-      <div id="papi-more-desc" class="portfolio-project-desc hidden">
-        <ul class="portfolio-project-list">
-          <li>Helped write a multiplayer 2D game in C++ from the ground up.</li>
-          <li>Wrote a renderer in OpenGL, featuring batched rendering, instanced tilemap rendering, and MSDF text
-            rendering.
-          </li>
-          <li>Implemented multiplayer features with Steamworks, including encoding and decoding binary messages, and
-            creating a basic C++ reflection system that processes header files using C#.
-          </li>
-          <li>Held weekly stand-ups to track progress with teammates, help resolve roadblocks, and assign tasks.</li>
-          <li>View the source code <a href="https://github.com/mattiebw/papi" target="_blank">here</a>.
           </li>
         </ul>
       </div>
