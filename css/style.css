@@ -111,6 +111,12 @@
     }
   }
 
+  @media (max-width: 300px) {
+    .portfolio-project-container {
+      font-size: 8px;
+    }
+  }
+
   .portfolio-project {
     width: 550px;
     white-space: wrap;
@@ -140,6 +146,8 @@
     transition: 0.3s all;
     background-color: rgba(1, 1, 1, 0.6);
     backdrop-filter: blur(4px);
+    overflow-x: hidden;
+    text-wrap: nowrap;
     @apply flex justify-between rounded-t-3xl px-4 py-2 text-white
   }
 
@@ -179,6 +187,12 @@
 
   .portfolio-icon {
     @apply inline ml-2 size-5 icon-white
+  }
+
+  @media (max-width: 550px) {
+    .portfolio-icon {
+      @apply size-3
+    }
   }
 
   .portfolio-icon-button {
