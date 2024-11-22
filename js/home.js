@@ -7,6 +7,27 @@ window.addEventListener('load', function() {
   box.value = `${a}@${b}`;
   email.href = `mailto:${a}@${b}`;
 
+  // Lazy load videos
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  }
+
+  var observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let video = entry.target;
+        video.play();
+        observer.unobserve(video);
+      }
+    });
+  }, options);
+
+  for (let video of document.getElementsByClassName("portfolio-video")) {
+    observer.observe(video);
+  }
+
   let projects = document.getElementsByClassName("portfolio-project");
   for (let i = 0; i < projects.length; i++) {
     let proj = projects[i];

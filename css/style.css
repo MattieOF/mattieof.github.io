@@ -152,6 +152,10 @@
     @apply rounded-t-3xl
   }
 
+  .portfolio-img {
+    @apply portfolio-video
+  }
+
   .portfolio-project-desc {
     padding-top: 265px;
     transition: 0.3s all;
