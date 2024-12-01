@@ -31,10 +31,9 @@
 <!-- This hidden div is to ensure that the theme-button-color class is actually included in the compiled stylesheet -->
 <div class="main-nav hidden"></div>
 
-<div class="absolute w-screen-without-scrollbar z-10 pointer-events-none"
-     style="margin-bottom: 10vh; margin-top: 85vh;">
-  <p id="planet-hint-text" class="planet-hint">Try clicking a planet to break it</p>
-</div>
+<!--<div class="absolute w-screen-without-scrollbar z-10 pointer-events-none"-->
+<!--     style="margin-bottom: 10vh; margin-top: 85vh;">-->
+<!--</div>-->
 
 <div class="absolute z-10 w-screen-without-scrollbar h-screen pointer-events-none">
   <div class="w-fit m-auto p-10"
@@ -45,7 +44,9 @@
       currently
       seeking an industry placement as a game or engine programmer. </p>
     <p class="regular-text"></p>
-    <p class="text-center mt-10 regular-text text-neutral-800 dark:text-neutral-400">👇 Scroll down to see
+
+    <p id="planet-hint-text" class="mt-10 planet-hint">Try clicking a planet to break it</p>
+    <p class="text-center regular-text text-neutral-800 dark:text-neutral-400">👇 Scroll down to see
       my work</p>
   </div>
 </div>
@@ -62,29 +63,17 @@
   <div class="portfolio-project-container">
 
     <div id="proj-ecoscape" class="portfolio-project" onclick="portfolioItemClicked('ecoscape');">
-      <video muted loop preload="none" playsinline class="portfolio-video">
+      <video muted loop preload="metadata" poster="Videos/EcoscapeThumbnail.jpg" playsinline class="portfolio-video">
         <source src="Videos/EcoscapeMontage.webm" type="video/webm">
         <source src="Videos/EcoscapeMontage.mp4" type="video/mp4">
       </video>
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>Ecoscape</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          2
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2023
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          3 Months
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          UE5
-          <a href="https://github.com/mattiebw/ecoscape" target="_blank"><img class="portfolio-icon-button"
-                                                                              src="img/Icons/GitHub.png"></a>
-        </div>
-      </div>
       <div id="ecoscape-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">Created with an artist partner, Ecoscape lets the player create their own animal
+        <p>Created with an artist partner, Ecoscape lets the player create their own animal
           habitat. It features procedural generation, a designer-accessible data-driven design, and many custom-built
           AIs.</p>
+        <div class="portfolio-project-footer">
+          <p>Click to learn more</p>
+        </div>
       </div>
       <div id="ecoscape-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -97,32 +86,35 @@
           <li>View the source code <a href="https://github.com/mattiebw/ecoscape" target="_blank">here</a>.</li>
         </ul>
       </div>
+      <div class="portfolio-project-header">
+        <div class="portfolio-project-name"><b>Ecoscape</b></div>
+        <div class="inline">
+          <span class="text-nowrap"><img class="portfolio-icon" src="Images/Icons/People.png">
+          2</span>
+          <span class="text-nowrap"><img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2023</span>
+          <span class="text-nowrap"><img class="portfolio-icon" src="Images/Icons/Clock.png">
+          3 Months</span>
+          <span class="text-nowrap"><img class="portfolio-icon" src="Images/Icons/Tool.png">
+          UE5</span>
+          <span class="text-nowrap"><a href="https://github.com/mattiebw/ecoscape" target="_blank"><img class="portfolio-icon-button"
+                                                                                                        src="img/Icons/GitHub.png"></a></span>
+        </div>
+      </div>
     </div>
 
     <div id="proj-ps" class="portfolio-project" onclick="portfolioItemClicked('ps');">
-      <video muted loop preload="none" playsinline class="portfolio-video">
+      <video muted loop preload="metadata" playsinline poster="Videos/PirateSurvivorsThumbnail.jpg" class="portfolio-video">
         <source src="Videos/PirateSurvivorsMontage.webm" type="video/webm">
         <source src="Videos/PirateSurvivorsMontage.mp4" type="video/mp4">
       </video>
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>Pirate Survivors</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          9
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2024
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          4 Months
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          UE5
-          <a href="https://github.com/mattiebw/PirateSurvivors" target="_blank"><img class="portfolio-icon-button"
-                                                                                     src="img/Icons/GitHub.png"></a>
-        </div>
-      </div>
       <div id="ps-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">As the sole programmer, I worked with artists and designers to create a multiplayer
+        <p>As the sole programmer, I worked with artists and designers to create a multiplayer
           survivors-like. I created systems to smoothly replicate thousands of actors, and editors for designers to
           easily create upgrades without code.</p>
+        <div class="portfolio-project-footer">
+          <p>Click to learn more</p>
+        </div>
       </div>
       <div id="ps-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -139,32 +131,35 @@
           <li>View the source code <a href="https://github.com/mattiebw/piratesurvivors" target="_blank">here</a>.</li>
         </ul>
       </div>
+      <div class="portfolio-project-header">
+        <div class="portfolio-project-name"><b>Pirate Survivors</b></div>
+        <div class="inline">
+          <span><img class="portfolio-icon" src="Images/Icons/People.png">
+          9</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2024</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Clock.png">
+          4 Months</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Tool.png">
+          UE5</span>
+          <span><a href="https://github.com/mattiebw/PirateSurvivors" target="_blank"><img class="portfolio-icon-button"
+                                                                                           src="img/Icons/GitHub.png"></a></span>
+        </div>
+      </div>
     </div>
 
     <div id="proj-papi" class="portfolio-project" onclick="portfolioItemClicked('papi');">
-      <!--      <video muted loop preload="none" playsinline class="portfolio-video">-->
+      <!--      <video muted loop preload="metadata" playsinline class="portfolio-video">-->
       <!--        <source src="Videos/PAPIMontage.webm" type="video/webm">-->
       <!--      </video>-->
       <img src="Images/PAPI.png" class="portfolio-img">
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>PAPI</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          5
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2024
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          3 Months (Ongoing)
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          C++ / OpenGL
-          <a href="https://github.com/mattiebw/papi" target="_blank"><img class="portfolio-icon-button"
-                                                                          src="img/Icons/GitHub.png"></a>
-        </div>
-      </div>
       <div id="papi-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">An ongoing group project for my second year, this project is a multiplayer 2D shooter. It
+        <p>An ongoing group project for my second year, this project is a multiplayer 2D shooter. It
           features a custom OpenGL renderer with batching and instancing, Steamworks-based networking, a C++ preprocessor
           written in C# to autogenerate reflection and RPC supporting code, and FMOD audio. I also manage the project.</p>
+        <div class="portfolio-project-footer">
+          <p>Click to learn more</p>
+        </div>
       </div>
       <div id="papi-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -182,33 +177,36 @@
           </li>
         </ul>
       </div>
+      <div class="portfolio-project-header">
+        <div class="portfolio-project-name"><b>PAPI</b></div>
+        <div class="inline">
+          <span><img class="portfolio-icon" src="Images/Icons/People.png">
+          5</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2024</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Clock.png">
+          3 Months (Ongoing)</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Tool.png">
+          C++ / OpenGL</span>
+          <span><a href="https://github.com/mattiebw/papi" target="_blank"><img class="portfolio-icon-button"
+                                                                                src="img/Icons/GitHub.png"></a></span>
+        </div>
+      </div>
     </div>
 
     <div id="proj-eos" class="portfolio-project" onclick="portfolioItemClicked('eos');">
-      <video muted loop preload="none" playsinline class="portfolio-video">
+      <video muted loop preload="metadata" playsinline poster="Videos/EOSThumbnail.jpg" class="portfolio-video">
         <source src="Videos/EOSMontage.webm" type="video/webm">
         <source src="Videos/EOSMontage.mp4" type="video/mp4">
       </video>
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>Echoes Of Serenity</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          Solo
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2024
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          4 Days
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          C#/Raylib
-          <a href="https://github.com/mattiebw/echoesofserenity" target="_blank"><img class="portfolio-icon-button"
-                                                                                      src="img/Icons/GitHub.png"></a>
-        </div>
-      </div>
       <div id="eos-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">For a week-long university game jam, I created a top-down survival game in C# and
+        <p>For a week-long university game jam, I created a top-down survival game in C# and
           Raylib. With no engine, I had to create a tilemap renderer, world generator,
           UI system, audio system, and all the games content and art. The game received the <b>most ambitious idea</b>
           award and impressed industry professionals in attendance.</p>
+        <div class="portfolio-project-footer">
+          <p>Click to learn more</p>
+        </div>
       </div>
       <div id="eos-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -220,32 +218,35 @@
           <li>Download the game <a href="https://mattieof.itch.io/echoes-of-serenity" target="_blank">here</a>.</li>
         </ul>
       </div>
+      <div class="portfolio-project-header">
+        <div class="portfolio-project-name"><b>Echoes Of Serenity</b></div>
+        <div class="inline">
+          <span><img class="portfolio-icon" src="Images/Icons/People.png">
+          Solo</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2024</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Clock.png">
+          4 Days</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Tool.png">
+          C#/Raylib</span>
+          <span><a href="https://github.com/mattiebw/echoesofserenity" target="_blank"><img class="portfolio-icon-button"
+                                                                                            src="img/Icons/GitHub.png"></a></span>
+        </div>
+      </div>
     </div>
 
     <div id="proj-chemicode" class="portfolio-project" onclick="portfolioItemClicked('chemicode');">
-      <video muted loop preload="none" playsinline class="portfolio-video">
+      <video muted loop preload="metadata" playsinline poster="Videos/ChemicodeThumbnail.jpg" class="portfolio-video">
         <source src="Videos/ChemicodeMontage.webm" type="video/webm">
         <source src="Videos/ChemicodeMontage.mp4" type="video/mp4">
       </video>
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>Chemicode</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          Solo
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2023
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          2 Months
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          UE5
-          <a href="https://github.com/mattiebw/chemicodeprototype" target="_blank"><img class="portfolio-icon-button"
-                                                                                        src="img/Icons/GitHub.png"></a>
-        </div>
-      </div>
       <div id="chemicode-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">Created to a brief for an educational game, Chemicode simulates chemical
+        <p>Created to a brief for an educational game, Chemicode simulates chemical
           interactions. A player can complete an assignment with physical actions, or with a script created in a custom
           drag-and-drop scripting language created for the game in C++. I also created all the art.</p>
+        <div class="portfolio-project-footer">
+          <p>Click to learn more</p>
+        </div>
       </div>
       <div id="chemicode-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -259,29 +260,34 @@
           </li>
         </ul>
       </div>
+      <div class="portfolio-project-header">
+        <div class="portfolio-project-name"><b>Chemicode</b></div>
+        <div class="inline">
+          <span><img class="portfolio-icon" src="Images/Icons/People.png">
+          Solo</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2023</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Clock.png">
+          2 Months</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Tool.png">
+          UE5</span>
+          <span><a href="https://github.com/mattiebw/chemicodeprototype" target="_blank"><img class="portfolio-icon-button"
+                                                                                              src="img/Icons/GitHub.png"></a></span>
+        </div>
+      </div>
     </div>
 
     <div id="proj-gm" class="portfolio-project" onclick="portfolioItemClicked('gm');">
-      <video muted loop preload="none" playsinline class="portfolio-video">
+      <video muted loop preload="metadata" playsinline poster="Videos/GMThumbnail.jpg" class="portfolio-video">
         <source src="Videos/GMMontage.webm" type="video/webm">
         <source src="Videos/GMMontage.mp4" type="video/mp4">
       </video>
-      <div class="portfolio-project-header">
-        <div class="inline my-auto"><b>2D Games</b></div>
-        <div class="inline">
-          <img class="portfolio-icon" src="Images/Icons/People.png">
-          Solo / 3
-          <img class="portfolio-icon" src="Images/Icons/Calendar.png">
-          2022
-          <img class="portfolio-icon" src="Images/Icons/Clock.png">
-          2-3 Months
-          <img class="portfolio-icon" src="Images/Icons/Tool.png">
-          GameMaker
-        </div>
-      </div>
       <div id="gm-desc" class="portfolio-project-desc">
-        <p style="max-width: 480px;">During my college course, I wrote multiple 2D games in GameMaker. One was a
+        <p>During my college course, I wrote multiple 2D games in GameMaker. One was a
           top-down survival horror, and the other a character-switching puzzle platformer.</p>
+        <div class="portfolio-project-footer">
+          <p>Click to learn more</p>
+        </div>
       </div>
       <div id="gm-more-desc" class="portfolio-project-desc hidden">
         <ul class="portfolio-project-list">
@@ -293,6 +299,19 @@
             <a href="https://github.com/mattiebw/scrapresurrection" target="_blank">Scrap Resurrection</a>.
           </li>
         </ul>
+      </div>
+      <div class="portfolio-project-header">
+        <div class="portfolio-project-name"><b>2D Games</b></div>
+        <div class="inline">
+          <span><img class="portfolio-icon" src="Images/Icons/People.png">
+          Solo / 3</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Calendar.png">
+          2022</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Clock.png">
+          2-3 Months</span>
+          <span><img class="portfolio-icon" src="Images/Icons/Tool.png">
+          GameMaker</span>
+        </div>
       </div>
     </div>
 

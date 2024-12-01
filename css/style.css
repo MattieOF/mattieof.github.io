@@ -22,7 +22,7 @@
   }
 
   .theme-button-color {
-    @apply bg-neutral-800 dark:bg-neutral-500 bg-opacity-100
+    @apply bg-neutral-800 dark:bg-neutral-500 bg-opacity-100 z-50
   }
 
   .regular-text {
@@ -118,10 +118,19 @@
   }
 
   .portfolio-project {
+    position: relative;
     width: 550px;
     white-space: wrap;
     transition: 0.3s all;
     @apply bg-neutral-300 dark:bg-neutral-800 m-5 rounded-3xl regular-text border-green-600 dark:border-green-500 border-2 overflow-hidden
+  }
+
+  .portfolio-project-header span {
+    @apply text-nowrap
+  }
+
+  .portfolio-project-footer {
+    @apply bg-neutral-400 dark:bg-neutral-700 text-center mt-2
   }
 
   .portfolio-project:hover {
@@ -130,30 +139,37 @@
   }
 
   .portfolio-project:hover .portfolio-project-header {
-    @apply rounded-none px-2
+    @apply rounded-none px-2 z-50
   }
 
   .portfolio-project:hover .portfolio-video {
     @apply rounded-none
   }
 
-  .portfolio-project:hover .portfolio-project-desc {
-    @apply px-2
+  .portfolio-project-name {
+    @apply inline my-auto pr-3
+  }
+
+  .portfolio-project .portfolio-project-desc {
+    /*@apply px-2*/
   }
 
   .portfolio-project-header {
-    margin-top: -300px;
+    position:absolute;
+    top: 0;
+    width: 100%;
+    z-index: 50;
     transition: 0.3s all;
     background-color: rgba(1, 1, 1, 0.6);
     backdrop-filter: blur(4px);
-    overflow-x: hidden;
-    text-wrap: nowrap;
+    /*overflow-x: hidden;
+    text-wrap: nowrap;*/
     @apply flex justify-between rounded-t-3xl px-4 py-2 text-white
   }
 
   .portfolio-video {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 16 / 9;
     transition: 0.3s all;
     object-fit: fill;
     padding-bottom: 3px;
@@ -165,15 +181,21 @@
   }
 
   .portfolio-project-desc {
-    padding-top: 265px;
     transition: 0.3s all;
     white-space: wrap;
-    @apply px-4 pb-3
+  }
+
+  .portfolio-project-desc p {
+    @apply px-4 py-2
+  }
+
+  .portfolio-project-desc ul {
+    @apply px-4 py-2
   }
 
   .portfolio-project-list {
     max-width: 480px;
-    @apply list-disc ml-4 mt-1
+    @apply list-disc ml-4 pt-0 mt-0 mb-1
   }
 
   .portfolio-project-desc a {
